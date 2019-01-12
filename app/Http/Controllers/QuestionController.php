@@ -46,8 +46,9 @@ class QuestionController extends Controller
         $question->option4 = request('question_optionD');
         $question->option5 = request('question_optionE');
         $question->answer = request('radios_options');
+        $question->topic = request('topic');
         $question->save();
-        return redirect('/preguntas');
+        return redirect('/questions');
     }
 
     /**

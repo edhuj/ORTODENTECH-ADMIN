@@ -12,7 +12,7 @@
             The most often used inputs you know and love
          </p>
       </div>
-      <form action="/preguntas" method="POST">
+      <form action="/questions" method="POST">
         {{csrf_field()}}
         <div class="block-content block-content-full tab-content" style="min-height: 290px;">
           <div class="tab-pane active show" id="wizard-simple-step1" role="tabpanel">
@@ -63,6 +63,11 @@
                 <input class="form-check-input" id="option5" name="radios_options" value="5" type="radio">
                 <label class="form-check-label" for="option5">Option 5</label>
               </div>
+          </div>
+
+          <div class="form-group">
+              <label >Topic(s)</label>
+              <input class="form-control" id="topic" name="topic" type="text">
           </div>
 
           </div>

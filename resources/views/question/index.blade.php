@@ -6,7 +6,7 @@
         <div class="block-header block-header-default">
             <h3 class="block-title">All questions</h3>
             <div class="block-options">
-                <a href="/preguntas/create">
+                <a href="/questions/create">
                   <button type="button" class="btn btn-sm btn-primary">
                       <i class="fa fa-plus">New question</i>
                   </button>
@@ -26,6 +26,7 @@
                             <th style="width: 10%;">Option C</th>
                             <th style="width: 10%;">Option D</th>
                             <th style="width: 10%;">Option E</th>
+                            <th style="width: 10%;">Topic</th>
                             <th class="text-center" style="width: 100px;">Actions</th>
                         </tr>
                     </thead>
@@ -41,6 +42,7 @@
                               <td>{{$question->option3}}</td>
                               <td>{{$question->option4}}</td>
                               <td>{{$question->option5}}</td>
+                              <td>{{$question->topic}}</td>
 
                               <td class="text-center">
                                   <div class="btn-group">
