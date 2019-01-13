@@ -37,7 +37,6 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        dump($request);
         $question = new Question;
         $question->statement = request('question_statement');
         $question->option1 = request('question_optionA');

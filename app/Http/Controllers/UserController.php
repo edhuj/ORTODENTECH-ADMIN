@@ -2,22 +2,30 @@
 
 namespace App\Http\Controllers;
 
-use App\Question;
-use App\User;
-use App\Http\Resources\QuestionCollection;
-use App\Http\Resources\User as ApiUser;
 use Illuminate\Http\Request;
+use App\User;
 
-class ApiController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
+    public function index()
+    {
+        $users = User::all();
+        return view('user/index', compact('users'));
+    }
 
-      return new QuestionCollection(Question::all());
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
     }
 
     /**
@@ -26,30 +34,15 @@ class ApiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-      #dump($request);
-      echo(request('requestType'));
-      if( request('requestType') == 'store_user' ){
-        echo("Holaaaaaaaaaaaa\n");
-        $user = new User;
-        $user->firebase_token = request('firebase_token');
-        $user->name = request('name');
-        $user->email = request('email');
-        $user->city = request('city');
-        $user->birthday = request('birthday');
-        $user->save();
-
-        return new ApiUser($user);
-      }
-      elseif(strcmp($request->requestType, 'store_answer')){
-        echo(request('email'));
-      }
-      else{
-        echo(request('name'));
-      }
-
-
+    public function store(Request $request){
+      $user = new User;
+      $user->firebase_token = request('firebase_token');
+      $user->name = request('name');
+      $user->email = request('email');
+      $user->city = request('city');
+      $user->birthday = request('birthday');
+      $user->save();
+      return redirect('/questions');
     }
 
     /**
@@ -59,6 +52,17 @@ class ApiController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
+    {
+
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
     {
         //
     }

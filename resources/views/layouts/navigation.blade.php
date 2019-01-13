@@ -38,11 +38,11 @@
             </li>
             <li class="nav-main-heading">Users</li>
             <li class="nav-main-item">
-                <a class="nav-main-link" href="/usuarios">
+                <a class="nav-main-link" href="/users">
                     <span class="nav-main-link-name">List</span>
                 </a>
-                <a class="nav-main-link" href="/top_usuarios">
-                    <span class="nav-main-link-name">Most active</span>
+                <a class="nav-main-link" href="/ranking">
+                    <span class="nav-main-link-name">Ranking</span>
                 </a>
             </li>
 
