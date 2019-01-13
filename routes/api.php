@@ -13,5 +13,6 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/questions', 'ApiController@index');
+Route::get('/user/{user}', 'ApiController@show');
 
 Route::post('/users', 'ApiController@store');

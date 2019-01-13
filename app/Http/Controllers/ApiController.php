@@ -39,7 +39,7 @@ class ApiController extends Controller
 
         return new ApiUser($user);
       }
-      
+
 
     }
 
@@ -51,7 +51,7 @@ class ApiController extends Controller
      */
     public function show($id)
     {
-        //
+        return new ApiUser(User::find($id));
     }
 
     /**
