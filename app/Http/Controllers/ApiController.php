@@ -28,10 +28,7 @@ class ApiController extends Controller
      */
     public function store(Request $request)
     {
-      #dump($request);
-      echo(request('requestType'));
       if( request('requestType') == 'store_user' ){
-        echo("Holaaaaaaaaaaaa\n");
         $user = new User;
         $user->firebase_token = request('firebase_token');
         $user->name = request('name');
@@ -42,13 +39,7 @@ class ApiController extends Controller
 
         return new ApiUser($user);
       }
-      elseif(strcmp($request->requestType, 'store_answer')){
-        echo(request('email'));
-      }
-      else{
-        echo(request('name'));
-      }
-
+      
 
     }
 
