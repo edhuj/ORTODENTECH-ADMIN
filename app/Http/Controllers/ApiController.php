@@ -51,7 +51,17 @@ class ApiController extends Controller
      */
     public function show($id)
     {
-        return new ApiUser(User::find($id));
+        $user = User::find($id);
+        if(is_null($user)){
+          return response()->json([
+            'id' => $id,
+            'message' => 'User is not updated'
+          ]);
+        }
+        else{
+          return new ApiUser($user);
+        }
+
     }
 
     /**
