@@ -40,7 +40,23 @@ class ApiController extends Controller
         return new ApiUser($user);
       }
 
+    }
 
+    public function checkUser(Request $request){
+
+      if( request('requestType') == 'check_user' ){
+        $user =  User::where('email', request('email'))->get();
+        echo($user->count());
+        if($user->count() > 0){
+          return new ApiUser($user->first());
+        }
+        else{
+          return response()->json([
+            'status' => 'error',
+            'message' => 'User not found'
+          ]);
+        }
+      }
     }
 
     /**
@@ -54,8 +70,8 @@ class ApiController extends Controller
         $user = User::find($id);
         if(is_null($user)){
           return response()->json([
-            'id' => $id,
-            'message' => 'User is not updated'
+            'status' => 'error',
+            'message' => 'User not found'
           ]);
         }
         else{
