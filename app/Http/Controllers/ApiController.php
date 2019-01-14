@@ -46,7 +46,6 @@ class ApiController extends Controller
 
       if( request('requestType') == 'check_user' ){
         $user =  User::where('email', request('email'))->get();
-        echo($user->count());
         if($user->count() > 0){
           return new ApiUser($user->first());
         }
