@@ -13,6 +13,7 @@ class QuestionsTableSeeder extends Seeder
      */
     public function run()
     {
+      $topics = array("Science", "History", "Geography", "Sports", "Cinema", "TV Shows");
       $faker = Factory::create();
 
       foreach(range(1,50) as $a) {
@@ -24,7 +25,7 @@ class QuestionsTableSeeder extends Seeder
           'option4'=>$faker->word,
           'option5'=>$faker->word,
           'answer'=>$faker->numberBetween($min = 1, $max = 5),
-          'topic'=>$faker->word
+          'topic'=>$topics[$faker->numberBetween($min = 0, $max = count($topics)-1)]
 		   ]);
       }
     }

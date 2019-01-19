@@ -16,8 +16,13 @@ class ApiController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-
       return new QuestionCollection(Question::all());
+    }
+
+
+    public function topics(){
+      $questionsGroupedByTopic = Question::all()->groupBy('topic');
+      return $questionsGroupedByTopic;
     }
 
     /**
