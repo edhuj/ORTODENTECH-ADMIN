@@ -13,10 +13,10 @@ class QuestionsTableSeeder extends Seeder
      */
     public function run()
     {
-      $topics = array("Science", "History", "Geography", "Sports", "Cinema", "TV Shows");
+      $topics = array("Science", "History", "Geography", "Sports", "Cinema", "TV Shows", "Theater", "Culture", "Animals", "Music", "Books", "Math", "Chemistry", "Physics", "Technology");
       $faker = Factory::create();
 
-      foreach(range(1,50) as $a) {
+      foreach(range(1,500) as $a) {
         Question::create([
           'statement'=>$faker->sentence($nbWords = 6, $variableNbWords = true),
           'option1'=>$faker->word,
