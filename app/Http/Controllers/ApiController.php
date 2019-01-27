@@ -106,4 +106,40 @@ class ApiController extends Controller
     {
         //
     }
+
+    public function checkAnswer(Request $request, $id){
+      $question = Question::find($id);
+      $user = User::find(request('userid'));
+
+      $message = "Message not defined";
+      if(!is_null($question)){
+        if(!is_null($user)){
+          $answered = request('myanswer');
+          if($question->answer == $answered){
+            return response()->json([
+              'status' => 'ok',
+              'message' => 'correct'
+            ]);
+          }
+          else{
+            return response()->json([
+              'status' => 'ok',
+              'message' => 'incorrect'
+            ]);
+          }
+        }
+        else{
+          $message = "User not found";
+        }
+      }
+      else{
+        $message = "Question not found";
+      }
+
+      return response()->json([
+        'status'=>'ok',
+        'message'=>$message
+        ]);
+
+    }
 }
