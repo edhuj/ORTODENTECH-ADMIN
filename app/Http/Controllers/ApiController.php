@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Question;
 use App\User;
+use App\Answer;
 use App\Http\Resources\QuestionCollection;
 use App\Http\Resources\User as ApiUser;
 use Illuminate\Http\Request;
@@ -110,23 +111,36 @@ class ApiController extends Controller
     public function checkAnswer(Request $request, $id){
       $question = Question::find($id);
       $user = User::find(request('userid'));
-
       $message = "Message not defined";
+      $answer_state = 0;
+      $points_received = 0;
+      $status = "ok";
+
       if(!is_null($question)){
         if(!is_null($user)){
-          $answered = request('myanswer');
-          if($question->answer == $answered){
-            return response()->json([
-              'status' => 'ok',
-              'message' => 'correct'
-            ]);
+          $user_answer = request('myanswer');
+          if($user_answer == 0){
+            $message = "Blank";
+            $answer_state = 3;
+            $points_received = 1;
+          }
+          elseif($question->answer == $user_answer){
+            $message = "Correct";
+            $answer_state = 1;
+            $points_received = 3;
           }
           else{
-            return response()->json([
-              'status' => 'ok',
-              'message' => 'incorrect'
-            ]);
+            $message = "Incorrect";
+            $answer_state = 2;
+            $points_received = 0;
           }
+
+          $answer = new Answer();
+          $answer->user_id = $user->id;
+          $answer->question_id = $question->id;
+          $answer->answer_state = $answer_state;
+          $answer->points_received = $points_received;
+          $answer->save();
         }
         else{
           $message = "User not found";
@@ -136,8 +150,9 @@ class ApiController extends Controller
         $message = "Question not found";
       }
 
+
       return response()->json([
-        'status'=>'ok',
+        'status'=>$status,
         'message'=>$message
         ]);
 

@@ -28,5 +28,6 @@ class QuestionsTableSeeder extends Seeder
           'topic'=>$topics[$faker->numberBetween($min = 0, $max = count($topics)-1)]
 		   ]);
       }
+
     }
 }
