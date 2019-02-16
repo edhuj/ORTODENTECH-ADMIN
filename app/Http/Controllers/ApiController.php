@@ -26,12 +26,11 @@ class ApiController extends Controller
       return $questionsGroupedByTopic;
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    public function ranking(){
+      return ApiUser::collection(User::all());
+    }
+
+
     public function store(Request $request)
     {
       if( request('requestType') == 'store_user' ){
