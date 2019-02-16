@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 Route::get('/questions', 'ApiController@index');
 Route::get('/topics', 'ApiController@topics');
 Route::get('/user/{user}', 'ApiController@show');
-Route::get('/ranking', 'ApiController@ranking')
+Route::get('/ranking', 'ApiController@ranking');
 
 Route::post('/users', 'ApiController@store');
 Route::post('/usercheck', 'ApiController@checkUser');
