@@ -20,5 +20,6 @@ Route::get('/questions/create', 'QuestionController@create');
 Route::post('/questions', 'QuestionController@store');
 
 Route::get('/users', 'UserController@index');
+Route::get('/ranking', 'UserController@ranking');
 
 Route::get('/answers', 'AnswerController@index');

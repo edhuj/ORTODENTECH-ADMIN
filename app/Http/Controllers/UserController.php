@@ -18,6 +18,12 @@ class UserController extends Controller
         return view('user/index', compact('users'));
     }
 
+
+    public function ranking(){
+      $users = User::all();
+      return view('user/ranking', compact('users'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
