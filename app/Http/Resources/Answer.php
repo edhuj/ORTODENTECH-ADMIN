@@ -15,11 +15,27 @@ class Answer extends JsonResource
      */
     public function toArray($request)
     {
+        $question = $this->question();
+        if($this->user_answer == 1){
+          $user_answer = $question->option1;
+        }
+        else if($this->user_answer == 2){
+          $user_answer = $question->option2;
+        }
+        else if($this->user_answer == 3){
+          $user_answer = $question->option3;
+        }
+        else if($this->user_answer == 4){
+          $user_answer = $question->option4;
+        }
+        else if($this->user_answer == 5){
+          $user_answer = $question->option5;
+        }
         return [
           'user_id' => $this->user_id,
           'question_statement' => Question::find($this->question_id)->statement,
           'answer_state' => $this->answer_state,
-          'user_answer' => $this->user_answer,
+          'user_answer' => $this->$user_answer,
           'points_received' => $this->points_received,
         ];
     }
