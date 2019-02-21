@@ -32,12 +32,12 @@ class Answer extends JsonResource
         else if($this->user_answer == 5){
           $user_answer = $question->option5;
         }
-        dump($user_answer);
+
         return [
           'user_id' => $this->user_id,
           'question_statement' => Question::find($this->question_id)->statement,
           'answer_state' => $this->answer_state,
-          'user_answer' => $this->$user_answer,
+          'user_answer' => $user_answer,
           'points_received' => $this->points_received,
         ];
     }
