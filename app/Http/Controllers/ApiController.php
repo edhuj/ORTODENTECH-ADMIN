@@ -93,7 +93,7 @@ class ApiController extends Controller
         ]);
       }
       else{
-        return $user->answers();
+        return $user->answers()->get();
       }
     }
 
