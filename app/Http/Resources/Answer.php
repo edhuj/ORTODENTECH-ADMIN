@@ -16,7 +16,7 @@ class Answer extends JsonResource
     public function toArray($request)
     {
         $question = Question::find($this->question_id);
-
+        $user_answer = "Blank";
         if($this->user_answer == 1){
           $user_answer = $question->option1;
         }
