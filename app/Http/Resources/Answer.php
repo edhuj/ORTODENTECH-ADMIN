@@ -19,6 +19,7 @@ class Answer extends JsonResource
           'user_id' => $this->user_id,
           'question_statement' => Question::find($this->question_id)->statement,
           'answer_state' => $this->answer_state,
+          'user_answer' => $this->user_answer,
           'points_received' => $this->points_received,
         ];
     }

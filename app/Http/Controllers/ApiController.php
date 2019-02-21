@@ -151,6 +151,7 @@ class ApiController extends Controller
           $answer = new Answer();
           $answer->user_id = $user->id;
           $answer->question_id = $question->id;
+          $answer->user_answer = $user_answer;
           $answer->answer_state = $answer_state;
           $answer->points_received = $points_received;
           $answer->save();

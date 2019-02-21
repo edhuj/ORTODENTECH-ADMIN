@@ -17,6 +17,7 @@ class CreateAnswersTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('question_id');
+            $table->integer('user_answer');
             $table->integer('answer_state');//1 correct, 2 incorrect, 3 blank
             $table->integer('points_received');//3 correct, 1 blank, 0 incorrect
             $table->timestamps();
