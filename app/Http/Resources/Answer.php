@@ -16,7 +16,7 @@ class Answer extends JsonResource
     public function toArray($request)
     {
         $question = Question::find($this->question_id);
-        #dump($question);
+
         if($this->user_answer == 1){
           $user_answer = $question->option1;
         }
@@ -32,6 +32,7 @@ class Answer extends JsonResource
         else if($this->user_answer == 5){
           $user_answer = $question->option5;
         }
+        dump($user_answer);
         return [
           'user_id' => $this->user_id,
           'question_statement' => Question::find($this->question_id)->statement,
