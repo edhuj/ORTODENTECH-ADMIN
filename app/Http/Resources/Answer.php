@@ -33,10 +33,17 @@ class Answer extends JsonResource
           $user_answer = $question->option5;
         }
 
+        if($this->answer_state == 1)
+          $answer_state = "Correct";
+        else if($this->answer_state == 2)
+          $answer_state = "Incorrect";
+        else if($this->answer_state == 3)
+          $answer_state = "Blank";
+
         return [
           'user_id' => $this->user_id,
           'question_statement' => Question::find($this->question_id)->statement,
-          'answer_state' => $this->answer_state,
+          'answer_state' => $answer_state,
           'user_answer' => $user_answer,
           'points_received' => $this->points_received,
         ];
