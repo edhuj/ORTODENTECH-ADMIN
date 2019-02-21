@@ -16,6 +16,7 @@ Route::get('/questions', 'ApiController@index');
 Route::get('/topics', 'ApiController@topics');
 Route::get('/user/{user}', 'ApiController@show');
 Route::get('/ranking', 'ApiController@ranking');
+Route::get('{user}/answers', 'ApiController@userAnswers')
 
 Route::post('/users', 'ApiController@store');
 Route::post('/usercheck', 'ApiController@checkUser');

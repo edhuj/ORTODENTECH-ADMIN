@@ -84,6 +84,19 @@ class ApiController extends Controller
 
     }
 
+    public function userAnswers($id){
+      $user = User::find($id);
+      if(is_null($user)){
+        return response()->json([
+          'status' => 'error',
+          'message' => 'User not found'
+        ]);
+      }
+      else{
+        return $user->answers();
+      }
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -152,7 +165,8 @@ class ApiController extends Controller
 
       return response()->json([
         'status'=>$status,
-        'message'=>$message
+        'message'=>$message,
+        'points' =>$points_received
         ]);
 
     }
