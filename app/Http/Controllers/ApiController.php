@@ -7,6 +7,7 @@ use App\User;
 use App\Answer;
 use App\Http\Resources\QuestionCollection;
 use App\Http\Resources\User as ApiUser;
+use App\Http\Resources\Answer as ApiAnswer;
 use Illuminate\Http\Request;
 
 class ApiController extends Controller
@@ -93,7 +94,7 @@ class ApiController extends Controller
         ]);
       }
       else{
-        return $user->answers()->get();
+        return ApiAnswer::collection($user->answers()->get());
       }
     }
 
