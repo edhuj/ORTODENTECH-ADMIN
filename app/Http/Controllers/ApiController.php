@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Question;
 use App\User;
 use App\Answer;
+use App\Post;
 use App\Http\Resources\QuestionCollection;
 use App\Http\Resources\User as ApiUser;
 use App\Http\Resources\Answer as ApiAnswer;
+use App\Http\Resources\Post as ApiPost;
 use Illuminate\Http\Request;
 
 class ApiController extends Controller
@@ -25,6 +27,10 @@ class ApiController extends Controller
     public function topics(){
       $questionsGroupedByTopic = Question::all()->groupBy('topic');
       return $questionsGroupedByTopic;
+    }
+
+    public function posts(){
+      return ApiPost::collection(Post::all());
     }
 
     public function ranking(){
@@ -64,12 +70,7 @@ class ApiController extends Controller
       }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
         $user = User::find($id);
@@ -98,24 +99,11 @@ class ApiController extends Controller
       }
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //

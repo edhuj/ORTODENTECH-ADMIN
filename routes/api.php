@@ -22,3 +22,5 @@ Route::post('/users', 'ApiController@store');
 Route::post('/usercheck', 'ApiController@checkUser');
 
 Route::get('/question/{question}/check', 'ApiController@checkAnswer');
+
+Route::get('/posts', 'ApiController@posts');

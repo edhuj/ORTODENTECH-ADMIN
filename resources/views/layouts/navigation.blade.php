@@ -54,6 +54,18 @@
 
             </li>
 
+            <li class="nav-main-heading">Post and Videos</li>
+            <li class="nav-main-item">
+                <a class="nav-main-link" href="/posts">
+                    <span class="nav-main-link-name">Posts</span>
+                </a>
+            </li>
+            <li class="nav-main-item">
+                <a class="nav-main-link" href="/videos">
+                    <span class="nav-main-link-name">Videos</span>
+                </a>
+            </li>
+
         </ul>
     </div>
     <!-- END Side Navigation -->
