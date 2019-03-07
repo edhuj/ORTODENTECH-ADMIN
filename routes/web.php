@@ -27,3 +27,5 @@ Route::get('/answers', 'AnswerController@index');
 Route::get('/posts', 'PostController@index');
 Route::get('/posts/create', 'PostController@create');
 Route::post('/posts', 'PostController@store');
+
+Route::get('/locations', 'LocationController@index');
