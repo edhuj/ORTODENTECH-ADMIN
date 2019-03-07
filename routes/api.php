@@ -26,4 +26,4 @@ Route::get('/question/{question}/check', 'ApiController@checkAnswer');
 Route::get('/posts', 'ApiController@posts');
 
 
-Route::get('/location', 'ApiController@location');
+Route::get('/location', 'ApiController@saveLocation');

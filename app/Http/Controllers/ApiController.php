@@ -163,8 +163,9 @@ class ApiController extends Controller
 
     }
 
-    public function location(Request $request){
-      $location = new Location;
+
+    public function saveLocation(Request $request){
+      $location = new Location();
       $location('provider') = request('provider');
       $location('accuracy') = request('accuracy');
       $location('latitude') = request('latitude');
