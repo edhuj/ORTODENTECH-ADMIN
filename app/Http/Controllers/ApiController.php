@@ -6,6 +6,8 @@ use App\Question;
 use App\User;
 use App\Answer;
 use App\Post;
+use App\Location;
+
 use App\Http\Resources\QuestionCollection;
 use App\Http\Resources\User as ApiUser;
 use App\Http\Resources\Answer as ApiAnswer;
@@ -159,5 +161,15 @@ class ApiController extends Controller
         'points' =>$points_received
         ]);
 
+    }
+
+    public function location(Request $request){
+      $location = new Location;
+      $location('provider') = request('provider');
+      $location('accuracy') = request('accuracy');
+      $location('latitude') = request('latitude');
+      $location('longitude') = request('longitude');
+
+      $location->save();
     }
 }
