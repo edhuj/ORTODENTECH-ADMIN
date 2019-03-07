@@ -20,6 +20,7 @@ class CreateLocationsTable extends Migration
             $table->string('accuracy');
             $table->string('latitude');
             $table->string('longitude');
+            $table->string('signal');
             $table->timestamps();
         });
     }

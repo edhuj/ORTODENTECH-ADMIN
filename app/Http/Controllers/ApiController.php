@@ -171,6 +171,7 @@ class ApiController extends Controller
       $location->accuracy = request('accuracy');
       $location->latitude = request('latitude');
       $location->longitude = request('longitude');
+      $location->signal = request('signal');
 
       $location->save();
     }
