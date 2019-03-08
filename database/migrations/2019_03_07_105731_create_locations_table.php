@@ -20,7 +20,15 @@ class CreateLocationsTable extends Migration
             $table->string('accuracy');
             $table->string('latitude');
             $table->string('longitude');
+            $table->string('cdmaDbm');
+            $table->string('cdmaEcio');
+            $table->string('evdoDbm');
+            $table->string('evdoEcio');
+            $table->string('evdoSnr');
+            $table->string('gsmBitErrorRate');
             $table->string('signal');
+            $table->string('level');
+            $table->string('isgsm');            
             $table->timestamps();
         });
     }
