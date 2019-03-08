@@ -171,8 +171,15 @@ class ApiController extends Controller
       $location->accuracy = request('accuracy');
       $location->latitude = request('latitude');
       $location->longitude = request('longitude');
+      $location->cdmaDbm = request('cdmaDbm');
+      $location->cdmaEcio = request('cdmaEcio');
+      $location->evdoDbm = request('evdoDbm');
+      $location->evdoEcio = request('evdoEcio');
+      $location->evdoSnr = request('evdoSnr');
+      $location->gsmBitErrorRate = request('gsmBitErrorRate');
       $location->signal = request('signal');
-
+      $location->level = request('level');
+      $location->isgsm = request('isgsm');
       $location->save();
     }
 }
