@@ -170,19 +170,29 @@ class ApiController extends Controller
       $location->model = request('model');
       $location->version_release = request('version_release');
       $location->version_name = request('version_name');
+
       $location->provider = request('provider');
       $location->accuracy = request('accuracy');
       $location->latitude = request('latitude');
       $location->longitude = request('longitude');
+
       $location->cdmaDbm = request('cdmaDbm');
       $location->cdmaEcio = request('cdmaEcio');
       $location->evdoDbm = request('evdoDbm');
       $location->evdoEcio = request('evdoEcio');
       $location->evdoSnr = request('evdoSnr');
       $location->gsmBitErrorRate = request('gsmBitErrorRate');
+      $location->mLteRsrp = request('mLteRsrp');
+      $location->mLteRsrq = request('mLteRsrq');
+      $location->mLteRssnr = request('mLteRssnr');
+      $location->mLteCqi = request('mLteCqi');
+
       $location->signal = request('signal');
       $location->level = request('level');
+      $location->networkType = request('networkType');
+      $location->gpsEnabled = request('gpsEnabled');
       $location->isgsm = request('isgsm');
+
       $location->save();
     }
 }
