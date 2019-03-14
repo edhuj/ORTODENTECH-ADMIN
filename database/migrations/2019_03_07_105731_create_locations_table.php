@@ -15,7 +15,10 @@ class CreateLocationsTable extends Migration
     {
         Schema::create('locations', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('imei');
+            $table->string('manufacturer');
+            $table->string('model');
+            $table->string('version_release');
+            $table->string('version_name');
             $table->string('provider');
             $table->string('accuracy');
             $table->string('latitude');
@@ -28,7 +31,7 @@ class CreateLocationsTable extends Migration
             $table->string('gsmBitErrorRate');
             $table->string('signal');
             $table->string('level');
-            $table->string('isgsm');            
+            $table->string('isgsm');
             $table->timestamps();
         });
     }
