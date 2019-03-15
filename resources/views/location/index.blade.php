@@ -22,7 +22,7 @@
 
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 11,
-          center: {lat: 33.678, lng: -116.243},
+          center: {lat:-12.066910, lng:-77.023073},
           mapTypeId: 'terrain'
         });
 
@@ -39,7 +39,7 @@
             center: {
               lat: parseFloat(signalLocations[i].latitude),lng: parseFloat(signalLocations[i].longitude),
             },
-            radius:10
+            radius:1
           });
         }
 
