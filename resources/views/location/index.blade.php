@@ -27,7 +27,10 @@
         });
 
         console.log(signalLocations.length);
-      
+        for (i = 0; i < signalLocations.length; i++) {
+          console.log("Hello "+i);
+        }
+
 
         var rectangle = new google.maps.Rectangle({
           strokeColor: '#FF0000',
