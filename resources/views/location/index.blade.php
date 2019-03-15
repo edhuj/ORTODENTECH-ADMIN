@@ -14,6 +14,13 @@
         padding: 0;
       }
     </style>
+
+  </head>
+  <body>
+    <div id="map"></div>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGAOvDgtDnuRnLbShwZpEGVZTRPZNINIQ&callback=initMap">
+    </script>
     <script type="text/javascript">
       function loadSignals(){
         var locations = {!!json_encode($locations)!!};
@@ -72,13 +79,6 @@
         loadSignals();
 
       }
-    </script>
-
-  </head>
-  <body>
-    <div id="map"></div>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGAOvDgtDnuRnLbShwZpEGVZTRPZNINIQ&callback=initMap">
     </script>
   </body>
 </html>
