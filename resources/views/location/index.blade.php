@@ -28,7 +28,7 @@
 
         console.log(signalLocations.length);
         for(int i=0; i<signalLocations.length; i++){
-          console.log(signalLocations[i]);
+          console.log('signalLocations[i]');
         }
 
 
