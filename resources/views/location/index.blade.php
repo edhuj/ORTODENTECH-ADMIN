@@ -29,19 +29,17 @@
         console.log(signalLocations.length);
         for (i = 0; i < signalLocations.length; i++) {
           console.log("Hello "+signalLocations[i].accuracy);
-          new google.maps.Rectangle({
+          new google.maps.Circle({
             strokeColor: '#FF0000',
             strokeOpacity: 0.8,
             strokeWeight: 2,
             fillColor: '#FF0000',
             fillOpacity: 0.35,
             map: map,
-            bounds: {
-              south: parseFloat(signalLocations[i].latitude)+0.001,
-              north: parseFloat(signalLocations[i].longitude)+0.001,
-              east: parseFloat(signalLocations[i].latitude)-0.001,
-              west: parseFloat(signalLocations[i].longitude)+0.001
-            }
+            center: {
+              lat: parseFloat(signalLocations[i].latitude),lng: parseFloat(signalLocations[i].longitude),
+            },
+            radius:100
           });
         }
 
