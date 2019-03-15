@@ -37,9 +37,11 @@
           }
         });
 
+        loadSignals();
 
       }
-
+    </script>
+    <script type="text/javascript">
       function loadSignals(){
         var locations = {!!json_encode($locations)!!};
         //console.log(locations);
@@ -71,7 +73,6 @@
       }
 
     </script>
-    
   </head>
   <body>
     <div id="map"></div>
