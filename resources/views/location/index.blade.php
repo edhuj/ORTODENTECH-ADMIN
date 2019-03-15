@@ -18,9 +18,10 @@
     <script>
       function initMap() {
 
-        var locations = {!!json_encode($locations)!!};
+        signalLocations = {!!json_encode($locations)!!};
 
-        console.log(locations.lenth);
+        console.log(signalLocations.length);
+
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 11,
           center: {lat: 33.678, lng: -116.243},
