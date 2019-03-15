@@ -39,7 +39,7 @@
             center: {
               lat: parseFloat(signalLocations[i].latitude),lng: parseFloat(signalLocations[i].longitude),
             },
-            radius:100
+            radius:10
           });
         }
 
