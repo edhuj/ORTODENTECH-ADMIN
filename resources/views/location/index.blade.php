@@ -28,7 +28,7 @@
 
         console.log(signalLocations.length);
         for (i = 0; i < signalLocations.length; i++) {
-          console.log("Hello "+i);
+          console.log("Hello "+signalLocations[i]);
         }
 
 
