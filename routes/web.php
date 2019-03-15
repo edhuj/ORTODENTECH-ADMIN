@@ -29,3 +29,4 @@ Route::get('/posts/create', 'PostController@create');
 Route::post('/posts', 'PostController@store');
 
 Route::get('/locations', 'LocationController@index');
+Route::get('/signum', 'LocationController@showMap');

@@ -17,6 +17,11 @@ class LocationController extends Controller
         return Location::all();
     }
 
+    public function showMap(){
+      $locations = Location::all();
+      return view('location/index', compact('locations'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
