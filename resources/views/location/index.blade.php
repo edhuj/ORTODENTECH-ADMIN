@@ -20,13 +20,18 @@
 
         signalLocations = {!!json_encode($locations)!!};
 
-        console.log(signalLocations.length);
-
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 11,
           center: {lat: 33.678, lng: -116.243},
           mapTypeId: 'terrain'
         });
+
+        console.log(signalLocations.length);
+        for(int i=0; i<signalLocations.length; i++){
+          console.log(signalLocations[i]);
+        }
+
+
 
         var rectangle = new google.maps.Rectangle({
           strokeColor: '#FF0000',
