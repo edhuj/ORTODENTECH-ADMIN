@@ -29,11 +29,31 @@
         console.log(signalLocations.length);
         for (i = 0; i < signalLocations.length; i++) {
           console.log("Hello "+signalLocations[i].accuracy);
+          if(parseInt(signalLocations[i].networkType) == 15 ){ //3G
+              if(parseInt(signalLocations[i].level) == 1){
+                mycolor = '#f03b20'
+              }
+              if(parseInt(signalLocations[i].level) == 2){
+                mycolor = '#feb24c'
+              }
+              if(parseInt(signalLocations[i].level) == 3){
+                mycolor = '#ffeda0'
+              }
+              if(parseInt(signalLocations[i].level) == 4){
+                mycolor = '#a1d99b'
+              }
+              if(parseInt(signalLocations[i].level) == 5){
+                mycolor = '#31a354'
+              }
+          }
+          else if(parseInt(signalLocations[i].networkType) == 13){//4G
+            mycolor = '#31a354'
+          }
           new google.maps.Circle({
             strokeColor: '#FF0000',
             strokeOpacity: 0.8,
             strokeWeight: 2,
-            fillColor: '#FF0000',
+            fillColor: mycolor,
             fillOpacity: 0.35,
             map: map,
             center: {
@@ -49,6 +69,7 @@
   </head>
   <body>
     <div id="map"></div>
+
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGAOvDgtDnuRnLbShwZpEGVZTRPZNINIQ&callback=initMap">
     </script>
