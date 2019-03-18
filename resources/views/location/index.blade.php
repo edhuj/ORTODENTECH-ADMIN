@@ -243,13 +243,14 @@
 
             <!-- Main Container -->
             <main id="main-container">
-
+              <div id="map"></div>
+              <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGAOvDgtDnuRnLbShwZpEGVZTRPZNINIQ&callback=initMap">
+              </script>
                 <!-- Page Content -->
                 <div class="content">
-                  <div id="map"></div>
-                  <script async defer
-                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGAOvDgtDnuRnLbShwZpEGVZTRPZNINIQ&callback=initMap">
-                  </script>
+
+
                 </div>
                 <!-- END Page Content -->
 
