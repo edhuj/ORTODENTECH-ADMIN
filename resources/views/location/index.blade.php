@@ -45,6 +45,7 @@
             styles: [
             {
               featureType: 'poi',
+              elementType: 'labels.text.fill',
               stylers: [{visibility: 'off'}]
             },
             {
@@ -64,6 +65,11 @@
             },
             {
               featureType: 'administrative',
+              elementType: 'labels.text.fill',
+              stylers: [{visibility: 'off'}]
+            },
+            {
+              featureType: 'transit',
               elementType: 'labels.text.fill',
               stylers: [{visibility: 'off'}]
             }
