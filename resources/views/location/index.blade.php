@@ -47,7 +47,7 @@
               }
           }
           else if(parseInt(signalLocations[i].networkType) == 13){//4G
-            mycolor = '#31a354'
+            mycolor = '#0000ff'
           }
           new google.maps.Circle({
             strokeColor: mycolor,
