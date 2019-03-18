@@ -157,23 +157,10 @@
                                         <div class="block-content">
                                         @foreach($manufacturers as $manufacturer)
                                             <div class="custom-control custom-checkbox custom-control-primary mb-1">
-                                              <input type="checkbox" class="custom-control-input" id="so-settings-".{{$manufacturer}} name="so-settings-status" value="1">
-                                              <label class="custom-control-label" for="so-settings-status">{{$manufacturer}}</label>
+                                              <input type="checkbox" class="custom-control-input" id="so-settings-".{{$manufacturer->manufacturer}} name="so-settings-status" value="1">
+                                              <label class="custom-control-label" for="so-settings-status">{{$manufacturer->manufacturer}}</label>
                                             </div>
                                         @endforeach
-                                            <div class="custom-control custom-checkbox custom-control-primary mb-1">
-                                                <input type="checkbox" class="custom-control-input" id="so-settings-status" name="so-settings-status" value="1">
-                                                <label class="custom-control-label" for="so-settings-status">Samsung</label>
-                                            </div>
-
-                                            <div class="custom-control custom-checkbox custom-control-primary mb-1">
-                                                <input type="checkbox" class="custom-control-input" id="so-settings-notifications" name="so-settings-notifications" value="1" checked>
-                                                <label class="custom-control-label" for="so-settings-notifications">Motorola</label>
-                                            </div>
-                                            <div class="custom-control custom-checkbox custom-control-primary mb-1">
-                                                <input type="checkbox" class="custom-control-input" id="so-settings-updates" name="so-settings-updates" value="1" checked>
-                                                <label class="custom-control-label" for="so-settings-updates">LGE</label>
-                                            </div>
 
                                         </div>
                                         <!-- END Options -->
