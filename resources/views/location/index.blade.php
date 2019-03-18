@@ -55,7 +55,7 @@
             {
               featureType: 'road.highway',
               elementType: 'geometry.stroke',
-              stylers: [{color: '#000000'}]
+              stylers: [{color: '#ffffff'}]
             },
             {
               featureType: 'road.highway',
