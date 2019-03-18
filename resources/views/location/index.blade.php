@@ -122,7 +122,7 @@
               stylers: [{color: '#17263c'}]
             },
             {
-              featureType: 'poi.business',
+              featureType: 'poi',
               stylers: [{visibility: 'off'}]
             },
             {
