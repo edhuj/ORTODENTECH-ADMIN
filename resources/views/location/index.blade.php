@@ -28,12 +28,12 @@
             <!-- Side Overlay-->
             <aside id="side-overlay">
                 <!-- Side Header -->
-                <div class="bg-image" style="background-image: url('assets/media/various/bg_side_overlay_header.jpg');">
+                <div class="bg-image" style="background-image: url('/media/various/bg_side_overlay_header.jpg');">
                     <div class="bg-primary-op">
                         <div class="content-header">
                             <!-- User Avatar -->
                             <a class="img-link mr-1" href="be_pages_generic_profile.html">
-                                <img class="img-avatar img-avatar48" src="assets/media/avatars/avatar10.jpg" alt="">
+                                <img class="img-avatar img-avatar48" src="/media/avatars/avatar10.jpg" alt="">
                             </a>
                             <!-- END User Avatar -->
 
