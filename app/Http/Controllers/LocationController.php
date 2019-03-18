@@ -18,7 +18,7 @@ class LocationController extends Controller
     }
 
     public function showMap(){
-      $locations = Location::all();
+      $locations = Location::where('networkType', '15')->get();
       return view('location/index', compact('locations'));
     }
 
