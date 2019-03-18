@@ -50,11 +50,11 @@
             mycolor = '#31a354'
           }
           new google.maps.Circle({
-            strokeColor: '#FF0000',
-            strokeOpacity: 0.8,
+            strokeColor: mycolor,
+            strokeOpacity: 1.0,
             strokeWeight: 2,
             fillColor: mycolor,
-            fillOpacity: 0.35,
+            fillOpacity: 1.0,
             map: map,
             center: {
               lat: parseFloat(signalLocations[i].latitude),lng: parseFloat(signalLocations[i].longitude),
