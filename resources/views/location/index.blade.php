@@ -49,7 +49,7 @@
             {
               featureType: 'administrative.locality',
               elementType: 'labels.text.fill',
-              stylers: [{color: '#d59563'}]
+              stylers: [{visibility: 'off'}]
             },
             {
               featureType: 'poi',
