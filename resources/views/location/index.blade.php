@@ -61,6 +61,11 @@
               featureType: 'road.highway',
               elementType: 'labels.text.fill',
               stylers: [{color: '#000000'}]
+            },
+            {
+              featureType: 'administrative',
+              elementType: 'labels.text.fill',
+              stylers: [{visibility: 'off'}]
             }
           ]
           });
