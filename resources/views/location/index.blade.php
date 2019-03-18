@@ -124,6 +124,17 @@
           ]
           });
 
+          map.setOptions({styles:[
+            {
+              featureType: 'poi.business',
+              stylers: [{visibility: 'off'}]
+            },
+            {
+              featureType: 'transit',
+              elementType: 'labels.icon',
+              stylers: [{visibility: 'off'}]
+            }});
+
           console.log(signalLocations.length);
           for (i = 0; i < signalLocations.length; i++) {
             console.log("Hello "+signalLocations[i].accuracy);
