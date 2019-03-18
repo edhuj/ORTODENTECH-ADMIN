@@ -42,7 +42,7 @@
             zoom: 11,
             center: {lat:-12.066910, lng:-77.023073},
             mapTypeId: 'terrain',
-            styles: styles: [
+            styles: [
             {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
             {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
             {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
