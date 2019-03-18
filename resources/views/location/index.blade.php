@@ -120,11 +120,7 @@
               featureType: 'water',
               elementType: 'labels.text.stroke',
               stylers: [{color: '#17263c'}]
-            }
-          ]
-          });
-
-          map.setOptions({styles:[
+            },
             {
               featureType: 'poi.business',
               stylers: [{visibility: 'off'}]
@@ -133,7 +129,10 @@
               featureType: 'transit',
               elementType: 'labels.icon',
               stylers: [{visibility: 'off'}]
-            }});
+            }
+          ]
+          });
+
 
           console.log(signalLocations.length);
           for (i = 0; i < signalLocations.length; i++) {
