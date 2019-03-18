@@ -155,6 +155,12 @@
                                             <span class="text-uppercase font-size-sm font-w700">FABRICANTE</span>
                                         </div>
                                         <div class="block-content">
+                                        @foreach($manufacturers as $manufacturer)
+                                            <div class="custom-control custom-checkbox custom-control-primary mb-1">
+                                              <input type="checkbox" class="custom-control-input" id="so-settings-".$manufacturer name="so-settings-status" value="1">
+                                              <label class="custom-control-label" for="so-settings-status">$manufacturer</label>
+                                            </div>
+                                        @endforeach
                                             <div class="custom-control custom-checkbox custom-control-primary mb-1">
                                                 <input type="checkbox" class="custom-control-input" id="so-settings-status" name="so-settings-status" value="1">
                                                 <label class="custom-control-label" for="so-settings-status">Samsung</label>
