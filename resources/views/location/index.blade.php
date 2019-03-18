@@ -53,13 +53,7 @@
                 <div class="content-side">
                     <!-- Side Overlay Tabs -->
                     <div class="block block-transparent pull-x pull-t">
-                        <ul class="nav nav-tabs nav-tabs-block nav-justified" data-toggle="tabs" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#so-settings">
-                                    <i class="fa fa-fw fa-cog"></i>
-                                </a>
-                            </li>
-                        </ul>
+
                         <div class="block-content tab-content overflow-hidden">
                             <!-- Profile -->
                             <div class="tab-pane pull-x fade fade-up show active" id="so-profile" role="tabpanel">
