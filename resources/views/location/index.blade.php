@@ -21,6 +21,69 @@
       <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
       <!-- <link rel="stylesheet" id="css-theme" href="/css/themes/xwork.min.css"> -->
       <!-- END Stylesheets -->
+
+      <style>
+        #map {
+          height: 100%;
+        }
+        html, body {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        }
+      </style>
+
+      <script>
+        function initMap() {
+
+          signalLocations = {!!json_encode($locations)!!};
+
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 11,
+            center: {lat:-12.066910, lng:-77.023073},
+            mapTypeId: 'terrain'
+          });
+
+          console.log(signalLocations.length);
+          for (i = 0; i < signalLocations.length; i++) {
+            console.log("Hello "+signalLocations[i].accuracy);
+            if(parseInt(signalLocations[i].networkType) == 15 ){ //3G
+                if(parseInt(signalLocations[i].level) == 1){
+                  mycolor = '#f03b20'
+                }
+                if(parseInt(signalLocations[i].level) == 2){
+                  mycolor = '#feb24c'
+                }
+                if(parseInt(signalLocations[i].level) == 3){
+                  mycolor = '#ffeda0'
+                }
+                if(parseInt(signalLocations[i].level) == 4){
+                  mycolor = '#31a354'
+                }
+                if(parseInt(signalLocations[i].level) == 5){
+                  mycolor = '#31a354'
+                }
+            }
+            else if(parseInt(signalLocations[i].networkType) == 13){//4G
+              mycolor = '#0000ff'
+            }
+            new google.maps.Circle({
+              strokeColor: mycolor,
+              strokeOpacity: 1.0,
+              strokeWeight: 2,
+              fillColor: mycolor,
+              fillOpacity: 1.0,
+              map: map,
+              center: {
+                lat: parseFloat(signalLocations[i].latitude),lng: parseFloat(signalLocations[i].longitude),
+              },
+              radius:20
+            });
+          }
+
+        }
+      </script>
+
     </head>
     <body>
 
@@ -181,66 +244,18 @@
             <!-- Main Container -->
             <main id="main-container">
 
-                <!-- Hero -->
-                <div class="bg-image" style="background-image: url('/media/various/bg_dashboard.jpg');">
-                    <div class="bg-white-90">
-                        <div class="content content-full">
-                            <div class="row">
-                                <div class="col-md-6 d-md-flex align-items-md-center">
-                                    <div class="py-4 py-md-0 text-center text-md-left invisible" data-toggle="appear">
-                                        <h1 class="font-size-h2 mb-2">Dashboard</h1>
-                                        <h2 class="font-size-lg font-w400 text-muted mb-0">Today is a great one!</h2>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 d-md-flex align-items-md-center">
-                                    <div class="row w-100 text-center">
-                                        <div class="col-6 col-xl-4 offset-xl-4 invisible" data-toggle="appear" data-timeout="300">
-                                            <p class="font-size-h3 font-w600 text-body-color-dark mb-0">
-                                                67
-                                            </p>
-                                            <p class="font-size-sm font-w700 text-uppercase mb-0">
-                                                <i class="far fa-chart-bar text-muted mr-1"></i> Sales
-                                            </p>
-                                        </div>
-                                        <div class="col-6 col-xl-4 invisible" data-toggle="appear" data-timeout="600">
-                                            <p class="font-size-h3 font-w600 text-body-color-dark mb-0">
-                                                $980
-                                            </p>
-                                            <p class="font-size-sm font-w700 text-uppercase mb-0">
-                                                <i class="far fa-chart-bar text-muted mr-1"></i> Earnings
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END Hero -->
-
                 <!-- Page Content -->
                 <div class="content">
-
+                  <div id="map"></div>
+                  <script async defer
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGAOvDgtDnuRnLbShwZpEGVZTRPZNINIQ&callback=initMap">
+                  </script>
                 </div>
                 <!-- END Page Content -->
 
             </main>
             <!-- END Main Container -->
 
-            <!-- Footer -->
-            <footer id="page-footer" class="bg-body-light">
-                <div class="content py-0">
-                    <div class="row font-size-sm">
-                        <div class="col-sm-6 order-sm-2 mb-1 mb-sm-0 text-center text-sm-right">
-                            Crafted with <i class="fa fa-heart text-danger"></i> by <a class="font-w600" href="https://1.envato.market/ydb" target="_blank">pixelcave</a>
-                        </div>
-                        <div class="col-sm-6 order-sm-1 text-center text-sm-left">
-                            <a class="font-w600" href="https://1.envato.market/r6y" target="_blank">Dashmix 1.5</a> &copy; <span data-toggle="year-copy">2018</span>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-            <!-- END Footer -->
         </div>
         <!-- END Page Container -->
 
