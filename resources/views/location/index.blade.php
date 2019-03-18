@@ -178,30 +178,24 @@
                                         <!-- END Options -->
                                         <!-- Options -->
                                         <div class="block-content block-content-sm block-content-full bg-body">
-                                            <span class="text-uppercase font-size-sm font-w700">OPCIONES</span>
+                                            <span class="text-uppercase font-size-sm font-w700">RED</span>
                                         </div>
                                         <div class="block-content">
                                             <div class="custom-control custom-checkbox custom-control-primary mb-1">
                                                 <input type="checkbox" class="custom-control-input" id="so-settings-status" name="so-settings-status" value="1">
-                                                <label class="custom-control-label" for="so-settings-status">Online Status</label>
+                                                <label class="custom-control-label" for="so-settings-status">4G</label>
                                             </div>
-                                            <p class="text-muted font-size-sm">
-                                                Make your online status visible to other users of your app
-                                            </p>
+
                                             <div class="custom-control custom-checkbox custom-control-primary mb-1">
                                                 <input type="checkbox" class="custom-control-input" id="so-settings-notifications" name="so-settings-notifications" value="1" checked>
-                                                <label class="custom-control-label" for="so-settings-notifications">Notifications</label>
+                                                <label class="custom-control-label" for="so-settings-notifications">3G</label>
                                             </div>
-                                            <p class="text-muted font-size-sm">
-                                                Receive desktop notifications regarding your projects and sales
-                                            </p>
+
                                             <div class="custom-control custom-checkbox custom-control-primary mb-1">
                                                 <input type="checkbox" class="custom-control-input" id="so-settings-updates" name="so-settings-updates" value="1" checked>
-                                                <label class="custom-control-label" for="so-settings-updates">Auto Updates</label>
+                                                <label class="custom-control-label" for="so-settings-updates">2G</label>
                                             </div>
-                                            <p class="text-muted font-size-sm">
-                                                If enabled, we will keep all your applications and servers up to date with the most recent features automatically
-                                            </p>
+
                                         </div>
                                         <!-- END Options -->
 
