@@ -122,7 +122,19 @@
               stylers: [{color: '#17263c'}]
             },
             {
-              featureType: 'poi',
+              featureType: 'poi.business',
+              stylers: [{visibility: 'off'}]
+            },
+            {
+              featureType: 'poi.attraction',
+              stylers: [{visibility: 'off'}]
+            },
+            {
+              featureType: 'poi.park',
+              stylers: [{visibility: 'off'}]
+            },
+            {
+              featureType: 'poi.school',
               stylers: [{visibility: 'off'}]
             },
             {
