@@ -19,7 +19,8 @@ class LocationController extends Controller
 
     public function showMap(){
       $locations = Location::where('networkType', '15')->get();
-      return view('location/index', compact('locations'));
+      $manufacturers = Location::select('manufacturer')->distinct()->get();
+      return view('location/index', compact('locations', 'manufacturers'));
     }
 
     /**
