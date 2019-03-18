@@ -40,7 +40,7 @@
                 mycolor = '#ffeda0'
               }
               if(parseInt(signalLocations[i].level) == 4){
-                mycolor = '#a1d99b'
+                mycolor = '#31a354'
               }
               if(parseInt(signalLocations[i].level) == 5){
                 mycolor = '#31a354'
