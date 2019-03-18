@@ -45,7 +45,6 @@
             styles: [
             {
               featureType: 'poi',
-              elementType: 'labels.text.fill',
               stylers: [{visibility: 'off'}]
             },
             {
@@ -157,44 +156,9 @@
                                     <div class="block mb-0">
                                         <!-- Personal -->
                                         <div class="block-content block-content-sm block-content-full bg-body">
-                                            <span class="text-uppercase font-size-sm font-w700">Personal</span>
+                                            <span class="text-uppercase font-size-sm font-w700">FILTRAR</span>
                                         </div>
-                                        <div class="block-content block-content-full">
-                                            <div class="form-group">
-                                                <label>Username</label>
-                                                <input type="text" readonly class="form-control" id="staticEmail" value="Admin">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="so-profile-name">Name</label>
-                                                <input type="text" class="form-control" id="so-profile-name" name="so-profile-name" value="George Taylor">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="so-profile-email">Email</label>
-                                                <input type="email" class="form-control" id="so-profile-email" name="so-profile-email" value="g.taylor@example.com">
-                                            </div>
-                                        </div>
-                                        <!-- END Personal -->
-
-                                        <!-- Password Update -->
-                                        <div class="block-content block-content-sm block-content-full bg-body">
-                                            <span class="text-uppercase font-size-sm font-w700">Password Update</span>
-                                        </div>
-                                        <div class="block-content block-content-full">
-                                            <div class="form-group">
-                                                <label for="so-profile-password">Current Password</label>
-                                                <input type="password" class="form-control" id="so-profile-password" name="so-profile-password">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="so-profile-new-password">New Password</label>
-                                                <input type="password" class="form-control" id="so-profile-new-password" name="so-profile-new-password">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="so-profile-new-password-confirm">Confirm New Password</label>
-                                                <input type="password" class="form-control" id="so-profile-new-password-confirm" name="so-profile-new-password-confirm">
-                                            </div>
-                                        </div>
-                                        <!-- END Password Update -->
-
+                                        
                                         <!-- Options -->
                                         <div class="block-content block-content-sm block-content-full bg-body">
                                             <span class="text-uppercase font-size-sm font-w700">Options</span>
