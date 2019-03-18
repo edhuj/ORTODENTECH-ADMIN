@@ -18,10 +18,6 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,400i,600,700">
       <link rel="stylesheet" id="css-main" href="/css/dashmix.min.css">
 
-      <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
-      <!-- <link rel="stylesheet" id="css-theme" href="/css/themes/xwork.min.css"> -->
-      <!-- END Stylesheets -->
-
       <style>
         #map {
           height: 100%;
@@ -41,7 +37,6 @@
           var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 11,
             center: {lat:-12.066910, lng:-77.023073},
-            mapTypeId: 'terrain',
             styles: [
             {
               featureType: 'poi',
