@@ -129,6 +129,11 @@
               featureType: 'transit',
               elementType: 'labels.icon',
               stylers: [{visibility: 'off'}]
+            },
+            {
+              featureType: "landscape",
+              elementType: "labels",
+              stylers: [{ visibility: "off" }]
             }
           ]
           });
