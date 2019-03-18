@@ -154,14 +154,31 @@
                             <div class="tab-pane pull-x fade fade-up show active" id="so-profile" role="tabpanel">
                                 <form action="be_pages_dashboard.html" method="POST" onsubmit="return false;">
                                     <div class="block mb-0">
-                                        <!-- Personal -->
-                                        <div class="block-content block-content-sm block-content-full bg-body">
-                                            <span class="text-uppercase font-size-sm font-w700">FILTRAR</span>
-                                        </div>
-                                        
+
                                         <!-- Options -->
                                         <div class="block-content block-content-sm block-content-full bg-body">
-                                            <span class="text-uppercase font-size-sm font-w700">Options</span>
+                                            <span class="text-uppercase font-size-sm font-w700">FABRICANTE</span>
+                                        </div>
+                                        <div class="block-content">
+                                            <div class="custom-control custom-checkbox custom-control-primary mb-1">
+                                                <input type="checkbox" class="custom-control-input" id="so-settings-status" name="so-settings-status" value="1">
+                                                <label class="custom-control-label" for="so-settings-status">Samsung</label>
+                                            </div>
+
+                                            <div class="custom-control custom-checkbox custom-control-primary mb-1">
+                                                <input type="checkbox" class="custom-control-input" id="so-settings-notifications" name="so-settings-notifications" value="1" checked>
+                                                <label class="custom-control-label" for="so-settings-notifications">Motorola</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox custom-control-primary mb-1">
+                                                <input type="checkbox" class="custom-control-input" id="so-settings-updates" name="so-settings-updates" value="1" checked>
+                                                <label class="custom-control-label" for="so-settings-updates">LGE</label>
+                                            </div>
+
+                                        </div>
+                                        <!-- END Options -->
+                                        <!-- Options -->
+                                        <div class="block-content block-content-sm block-content-full bg-body">
+                                            <span class="text-uppercase font-size-sm font-w700">OPCIONES</span>
                                         </div>
                                         <div class="block-content">
                                             <div class="custom-control custom-checkbox custom-control-primary mb-1">
