@@ -14,7 +14,7 @@ class LocationController extends Controller
      */
     public function index()
     {
-        return Location::where('manufacturer', 'motorola')->get();
+        return Location::where('networkType', '15')->get();
     }
 
     public function showMap(){
