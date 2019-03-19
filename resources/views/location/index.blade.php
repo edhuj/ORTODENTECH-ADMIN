@@ -191,7 +191,7 @@
                                         <!-- Submit -->
                                         <div class="block-content row justify-content-center border-top">
                                             <div class="col-9">
-                                                <input  type ="button" class="btn btn-block btn-hero-primary" onclick="invocar();return false;">
+                                                <input  value = "Check" type ="button" class="btn btn-block btn-hero-primary" onclick="invocar();return false;">
                                                     <i class="fa fa-fw fa-save mr-1"></i> Save
                                                 </input>
                                             </div>

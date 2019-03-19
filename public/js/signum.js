@@ -8,6 +8,7 @@ function sendAsyncRequest(url, method, params, callback,fallback) {
 
 	request.callback = callback;
 	request.onreadystatechange = function() {
+    console.log("Ready state:" + request.readyState);
 		if (request.readyState == 4){
 			if(request.status == 200){
 				callback(request.responseText);
