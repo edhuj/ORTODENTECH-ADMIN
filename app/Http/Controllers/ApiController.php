@@ -204,31 +204,34 @@ class ApiController extends Controller
       #dd($request->input('o-manufacturer-status'));
       $marcas = $request->input()['so-manufacturer-status'];
       $redes = $request->input()['so-network-status'];
+
       $signals = Location::query();
       foreach($marcas as $manufacturer){
         $signals->orWhere('manufacturer', '=', $manufacturer);
       }
 
+
+      $networks = Location::query();
       foreach($redes as $red){
         if($red == '4G'){
-          $signals->orWhere('networkType', '=', '13');
+          $networks->orWhere('networkType', '=', '13');
         }
         if($red == '3G'){
-          $signals->orWhere('networkType', '=', '3');
-          $signals->orWhere('networkType', '=', '8');
-          $signals->orWhere('networkType', '=', '9');
-          $signals->orWhere('networkType', '=', '10');
-          $signals->orWhere('networkType', '=', '15');
+          $networks->orWhere('networkType', '=', '3');
+          $networks->orWhere('networkType', '=', '8');
+          $networks->orWhere('networkType', '=', '9');
+          $networks->orWhere('networkType', '=', '10');
+          $networks->orWhere('networkType', '=', '15');
         }
         if($red == '2G'){
 
         }
         if($red == 'NN'){
-          $signals->orWhere('networkType', '=', '0');
+          $networks->orWhere('networkType', '=', '0');
         }
       }
 
-      return $signals->get();
+      return $networks;
 
     }
 }
