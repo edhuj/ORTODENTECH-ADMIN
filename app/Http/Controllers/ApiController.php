@@ -231,7 +231,7 @@ class ApiController extends Controller
         }
       }
 
-      return $networks;
+      return $networks->get();
 
     }
 }
