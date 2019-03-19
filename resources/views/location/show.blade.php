@@ -28,6 +28,8 @@
 
         console.log(signalLocations.length);
         for (i = 0; i < signalLocations.length; i++) {
+
+          mycolor = '#31a354';
           
           console.log(signalLocations[i].manufacturer);
           if(parseInt(signalLocations[i].level) == 1){
