@@ -207,7 +207,7 @@ class ApiController extends Controller
       dump($marcas);
       $signals = Location::query();
       foreach($marcas as $manufacturer){
-        $signals->orWhere('content', '=', $manufacturer);
+        $signals->orWhere('manufacturer', '=', $manufacturer);
       }
 
       dd($signals->get());
