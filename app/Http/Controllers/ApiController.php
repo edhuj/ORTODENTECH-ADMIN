@@ -205,10 +205,7 @@ class ApiController extends Controller
       $marcas = $request->input()['so-manufacturer-status'];
       $redes = $request->input()['so-network-status'];
 
-      $signals = Location::whereIn('manufacturer',$marcas);
-
       $networks = array();
-
       foreach($redes as $red){
         if($red == '4G'){
           array_push($networks, '13');
@@ -227,9 +224,7 @@ class ApiController extends Controller
           array_push($networks, '0');
         }
       }
-
-      dump($networks);
+      $signals = Location::whereIn('manufacturer',$marcas)->whereIn('networkType',$networks);
       return $signals->get();
-
     }
 }
