@@ -205,9 +205,13 @@ class ApiController extends Controller
       $marcas = $request->input()['so-manufacturer-status'];
       $redes = $request->input()['so-manufacturer-status'];
       dump($marcas);
-      foreach ($marcas as $manufacturer) {
-        dump($manufacturer);
+      $signals = Location::query();
+      foreach($marcas as $manufacturer){
+        $signals->orWhere('content', '=', $manufacturer);
       }
+
+      dd($signals->get());
+
 
     }
 }
