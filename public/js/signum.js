@@ -41,6 +41,11 @@ function invocar(){
 	sendAsyncRequest(document.signum_filter_form.action+"?"+parameters,"GET",null,procesar,fallo);
 	//----fin----
 }
+
+function fallo(){
+  console.log("No seas weon pe");
+}
+
 function getParameters(form) {
 	var params = "";
 	for ( var i = 0; i < form.elements.length; i++) {

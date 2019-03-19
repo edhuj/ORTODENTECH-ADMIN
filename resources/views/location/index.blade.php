@@ -191,9 +191,9 @@
                                         <!-- Submit -->
                                         <div class="block-content row justify-content-center border-top">
                                             <div class="col-9">
-                                                <button class="btn btn-block btn-hero-primary" onclick="invocar();return false;">
+                                                <input  type ="button" class="btn btn-block btn-hero-primary" onclick="invocar();return false;">
                                                     <i class="fa fa-fw fa-save mr-1"></i> Save
-                                                </button>
+                                                </input>
                                             </div>
                                         </div>
                                         <!-- END Submit -->
