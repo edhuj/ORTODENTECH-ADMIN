@@ -211,8 +211,8 @@ class ApiController extends Controller
       }
 
 
-      dd($signals->get()->count());
-      dd($redes);
+      dump($signals->get()->count());
+      dump($redes);
 
     }
 }
