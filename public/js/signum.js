@@ -58,7 +58,7 @@ function procesar(responseText){
       strokeWeight: 2,
       fillColor: mycolor,
       fillOpacity: 1.0,
-      map: map,
+      map: window.map,
       center: {
         lat: parseFloat(signalLocations[i].latitude),lng: parseFloat(signalLocations[i].longitude),
       },

@@ -34,7 +34,7 @@
 
           signalLocations = {!!json_encode($locations)!!};
 
-          var map = new google.maps.Map(document.getElementById('map'), {
+          window.map = new google.maps.Map(document.getElementById('map'), {
             zoom: 11,
             center: {lat:-12.066910, lng:-77.023073},
             styles: [
