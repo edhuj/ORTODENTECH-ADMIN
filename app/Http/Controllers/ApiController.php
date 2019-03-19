@@ -204,10 +204,7 @@ class ApiController extends Controller
 
       $marcas = $request->input()['so-manufacturer-status'];
       $redes = $request->input()['so-network-status'];
-
-      dump($marcas);
-      dump($redes);
-
+      
       $networks = array();
       foreach($redes as $red){
         if($red == '4G'){
