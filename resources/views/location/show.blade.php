@@ -28,7 +28,6 @@
 
         console.log(signalLocations.length);
         for (i = 0; i < signalLocations.length; i++) {
-          console.log("Hello "+signalLocations[i].accuracy);
           if(parseInt(signalLocations[i].networkType) == 15 ){ //3G
               if(parseInt(signalLocations[i].level) == 1){
                 mycolor = '#f03b20'
@@ -46,9 +45,7 @@
                 mycolor = '#31a354'
               }
           }
-          else if(parseInt(signalLocations[i].networkType) == 13){//4G
-            mycolor = '#0000ff'
-          }
+          
           new google.maps.Circle({
             strokeColor: mycolor,
             strokeOpacity: 1.0,
