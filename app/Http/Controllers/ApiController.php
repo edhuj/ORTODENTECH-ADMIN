@@ -231,7 +231,7 @@ class ApiController extends Controller
         }
       }
 
-      return $networks->get()->merge($signals);
+      return $signals->get();
 
     }
 }
