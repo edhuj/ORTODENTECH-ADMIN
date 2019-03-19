@@ -32,9 +32,38 @@ function getRequest(){
 }
 
 function procesar(responseText){
-	var jsonResponse = JSON.parse(responseText);
+	var signalLocations = JSON.parse(responseText);
 
-  console.log("Hello dowl@!" + jsonResponse.length);
+  for (i = 0; i < signalLocations.length; i++) {
+    mycolor = '#31a354';
+
+    if(parseInt(signalLocations[i].level) == 1){
+        mycolor = '#f03b20'
+    }
+    if(parseInt(signalLocations[i].level) == 2){
+      mycolor = '#feb24c'
+    }
+    if(parseInt(signalLocations[i].level) == 3){
+      mycolor = '#ffeda0'
+    }
+    if(parseInt(signalLocations[i].level) == 4){
+      mycolor = '#31a354'
+    }
+    if(parseInt(signalLocations[i].level) == 5){
+      mycolor = '#31a354'
+    }
+    new google.maps.Circle({
+      strokeColor: mycolor,
+      strokeOpacity: 1.0,
+      strokeWeight: 2,
+      fillColor: mycolor,
+      fillOpacity: 1.0,
+      map: map,
+      center: {
+        lat: parseFloat(signalLocations[i].latitude),lng: parseFloat(signalLocations[i].longitude),
+      },
+      radius:20
+    });
 
 }
 function invocar(){
