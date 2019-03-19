@@ -157,7 +157,7 @@
                                         <div class="block-content">
                                         @foreach($manufacturers as $manufacturer)
                                             <div class="custom-control custom-checkbox custom-control-primary mb-1">
-                                              <input type="checkbox" class="custom-control-input" id="so-.{{$manufacturer->manufacturer}}-status" name="so-manufacturer-status" value="{{$manufacturer->manufacturer}}">
+                                              <input type="checkbox" class="custom-control-input" id="so-.{{$manufacturer->manufacturer}}-status" name="so-manufacturer-status[]" value="{{$manufacturer->manufacturer}}">
                                               <label class="custom-control-label" for="so-.{{$manufacturer->manufacturer}}-status">{{$manufacturer->manufacturer}}</label>
                                             </div>
                                         @endforeach
