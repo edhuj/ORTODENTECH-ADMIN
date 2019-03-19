@@ -28,23 +28,24 @@
 
         console.log(signalLocations.length);
         for (i = 0; i < signalLocations.length; i++) {
-
-              if(parseInt(signalLocations[i].level) == 1){
-                mycolor = '#f03b20'
-              }
-              if(parseInt(signalLocations[i].level) == 2){
-                mycolor = '#feb24c'
-              }
-              if(parseInt(signalLocations[i].level) == 3){
-                mycolor = '#ffeda0'
-              }
-              if(parseInt(signalLocations[i].level) == 4){
-                mycolor = '#31a354'
-              }
-              if(parseInt(signalLocations[i].level) == 5){
-                mycolor = '#31a354'
-              }
           
+          console.log(signalLocations[i].manufacturer);
+          if(parseInt(signalLocations[i].level) == 1){
+              mycolor = '#f03b20'
+          }
+          if(parseInt(signalLocations[i].level) == 2){
+            mycolor = '#feb24c'
+          }
+          if(parseInt(signalLocations[i].level) == 3){
+            mycolor = '#ffeda0'
+          }
+          if(parseInt(signalLocations[i].level) == 4){
+            mycolor = '#31a354'
+          }
+          if(parseInt(signalLocations[i].level) == 5){
+            mycolor = '#31a354'
+          }
+
 
           new google.maps.Circle({
             strokeColor: mycolor,
