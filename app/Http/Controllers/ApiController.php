@@ -205,32 +205,30 @@ class ApiController extends Controller
       $marcas = $request->input()['so-manufacturer-status'];
       $redes = $request->input()['so-network-status'];
 
-      $signals = Location::query();
-      foreach($marcas as $manufacturer){
-        $signals->orWhere('manufacturer', '=', $manufacturer);
-      }
+      $signals = Location::whereIn($marcas);
 
+      $networks = array();
 
-      $networks = Location::query();
       foreach($redes as $red){
         if($red == '4G'){
-          $networks->orWhere('networkType', '=', '13');
+          array_push($networks, '13');
         }
         if($red == '3G'){
-          $networks->orWhere('networkType', '=', '3');
-          $networks->orWhere('networkType', '=', '8');
-          $networks->orWhere('networkType', '=', '9');
-          $networks->orWhere('networkType', '=', '10');
-          $networks->orWhere('networkType', '=', '15');
+          array_push($networks, '3');
+          array_push($networks, '8');
+          array_push($networks, '9');
+          array_push($networks, '10');
+          array_push($networks, '15');
         }
         if($red == '2G'){
 
         }
         if($red == 'NN'){
-          $networks->orWhere('networkType', '=', '0');
+          array_push($networks, '0');
         }
       }
 
+      dump($networks);
       return $signals->get();
 
     }
