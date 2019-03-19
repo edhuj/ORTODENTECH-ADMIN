@@ -72,10 +72,8 @@
 
 
           for (i = 0; i < signalLocations.length; i++) {
-            console.log("Hello "+signalLocations[i].accuracy);
             mycolor = '#31a354';
 
-            console.log(signalLocations[i].manufacturer);
             if(parseInt(signalLocations[i].level) == 1){
                 mycolor = '#f03b20'
             }
