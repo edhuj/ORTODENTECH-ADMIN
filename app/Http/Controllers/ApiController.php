@@ -205,7 +205,7 @@ class ApiController extends Controller
       $marcas = $request->input()['so-manufacturer-status'];
       $redes = $request->input()['so-network-status'];
 
-      $signals = Location::whereIn($marcas);
+      $signals = Location::whereIn('manufacturer',$marcas);
 
       $networks = array();
 
