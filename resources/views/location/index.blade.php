@@ -170,19 +170,25 @@
                                         </div>
                                         <div class="block-content">
                                             <div class="custom-control custom-checkbox custom-control-primary mb-1">
-                                                <input type="checkbox" class="custom-control-input" id="so-settings-status" name="so-settings-status" value="1">
-                                                <label class="custom-control-label" for="so-settings-status">4G</label>
+                                                <input type="checkbox" class="custom-control-input" id="so-4g-status" name="so-network-status[]" value="4G">
+                                                <label class="custom-control-label" for="so-4g-status">4G</label>
                                             </div>
 
                                             <div class="custom-control custom-checkbox custom-control-primary mb-1">
-                                                <input type="checkbox" class="custom-control-input" id="so-settings-notifications" name="so-settings-notifications" value="1" checked>
-                                                <label class="custom-control-label" for="so-settings-notifications">3G</label>
+                                                <input type="checkbox" class="custom-control-input" id="so-3g-status" name="so-network-status[]" value="3G" checked>
+                                                <label class="custom-control-label" for="so-3g-status">3G</label>
                                             </div>
 
                                             <div class="custom-control custom-checkbox custom-control-primary mb-1">
-                                                <input type="checkbox" class="custom-control-input" id="so-settings-updates" name="so-settings-updates" value="1" checked>
-                                                <label class="custom-control-label" for="so-settings-updates">2G</label>
+                                                <input type="checkbox" class="custom-control-input" id="so-2g-status" name="so-network-status[]" value="2G" checked>
+                                                <label class="custom-control-label" for="so-2g-status">2G</label>
                                             </div>
+
+                                            <div class="custom-control custom-checkbox custom-control-primary mb-1">
+                                                <input type="checkbox" class="custom-control-input" id="so-nn-status" name="so-network-status[]" value="NN" checked>
+                                                <label class="custom-control-label" for="so-nn-status">Sin señal</label>
+                                            </div>
+
 
                                         </div>
                                         <!-- END Options -->
