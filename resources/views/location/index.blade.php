@@ -147,7 +147,7 @@
                         <div class="block-content tab-content overflow-hidden">
                             <!-- Profile -->
                             <div class="tab-pane pull-x fade fade-up show active" id="so-profile" role="tabpanel">
-                                <form action="/api/query" method="POST">
+                                <form action="/api/query" method="GET">
                                     <div class="block mb-0">
 
                                         <!-- Options -->
