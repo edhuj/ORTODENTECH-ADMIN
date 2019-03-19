@@ -202,8 +202,8 @@ class ApiController extends Controller
 
     public function queryLocations(Request $request){
       #dd($request->input('o-manufacturer-status'));
-      $marcas = $request->input();
-      dump($marcas['so-manufacturer-status']);
+      $marcas = $request->input()['so-manufacturer-status'];
+      dump($marcas);
 
     }
 }
