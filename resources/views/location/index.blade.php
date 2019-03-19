@@ -71,28 +71,25 @@
           });
 
 
-          console.log(signalLocations.length);
           for (i = 0; i < signalLocations.length; i++) {
             console.log("Hello "+signalLocations[i].accuracy);
-            if(parseInt(signalLocations[i].networkType) == 15 ){ //3G
-                if(parseInt(signalLocations[i].level) == 1){
-                  mycolor = '#f03b20'
-                }
-                if(parseInt(signalLocations[i].level) == 2){
-                  mycolor = '#feb24c'
-                }
-                if(parseInt(signalLocations[i].level) == 3){
-                  mycolor = '#ffeda0'
-                }
-                if(parseInt(signalLocations[i].level) == 4){
-                  mycolor = '#31a354'
-                }
-                if(parseInt(signalLocations[i].level) == 5){
-                  mycolor = '#31a354'
-                }
+            mycolor = '#31a354';
+
+            console.log(signalLocations[i].manufacturer);
+            if(parseInt(signalLocations[i].level) == 1){
+                mycolor = '#f03b20'
             }
-            else if(parseInt(signalLocations[i].networkType) == 13){//4G
-              mycolor = '#0000ff'
+            if(parseInt(signalLocations[i].level) == 2){
+              mycolor = '#feb24c'
+            }
+            if(parseInt(signalLocations[i].level) == 3){
+              mycolor = '#ffeda0'
+            }
+            if(parseInt(signalLocations[i].level) == 4){
+              mycolor = '#31a354'
+            }
+            if(parseInt(signalLocations[i].level) == 5){
+              mycolor = '#31a354'
             }
             new google.maps.Circle({
               strokeColor: mycolor,
