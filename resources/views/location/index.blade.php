@@ -147,7 +147,7 @@
                         <div class="block-content tab-content overflow-hidden">
                             <!-- Profile -->
                             <div class="tab-pane pull-x fade fade-up show active" id="so-profile" role="tabpanel">
-                                <form action="be_pages_dashboard.html" method="POST" onsubmit="return false;">
+                                <form action="/api/query" method="POST">
                                     <div class="block mb-0">
 
                                         <!-- Options -->
@@ -157,7 +157,7 @@
                                         <div class="block-content">
                                         @foreach($manufacturers as $manufacturer)
                                             <div class="custom-control custom-checkbox custom-control-primary mb-1">
-                                              <input type="checkbox" class="custom-control-input" id="so-.{{$manufacturer->manufacturer}}-status" name="so-.{{$manufacturer->manufacturer}}-status" value="1">
+                                              <input type="checkbox" class="custom-control-input" id="so-.{{$manufacturer->manufacturer}}-status" name="so-manufacturer-status" value="{{$manufacturer->manufacturer}}">
                                               <label class="custom-control-label" for="so-.{{$manufacturer->manufacturer}}-status">{{$manufacturer->manufacturer}}</label>
                                             </div>
                                         @endforeach

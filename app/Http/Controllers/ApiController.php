@@ -199,4 +199,8 @@ class ApiController extends Controller
     public function getManufacturers(){
       return Location::select('manufacturer')->distinct()->get();
     }
+
+    public function queryLocations(Request $request){
+      dd($request);
+    }
 }
