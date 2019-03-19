@@ -202,7 +202,7 @@ class ApiController extends Controller
 
     public function queryLocations(Request $request){
       $manufacturers = request('so-manufacturers-status');
-      for($manufacturers as $manufacturer){
+      foreach($manufacturers as $manufacturer){
         echo($manufacturer);
       }
 
