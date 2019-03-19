@@ -201,6 +201,9 @@ class ApiController extends Controller
     }
 
     public function queryLocations(Request $request){
-      dd($request->all());
+      #dd($request->input('o-manufacturer-status'));
+      foreach ($request->input('o-manufacturer-status') as $manufacturer ) {
+        echo($manufacturer);
+      }
     }
 }
