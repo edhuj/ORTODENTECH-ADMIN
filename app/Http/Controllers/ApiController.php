@@ -203,15 +203,16 @@ class ApiController extends Controller
     public function queryLocations(Request $request){
       #dd($request->input('o-manufacturer-status'));
       $marcas = $request->input()['so-manufacturer-status'];
-      $redes = $request->input()['so-manufacturer-status'];
+      $redes = $request->input()['so-network-status'];
       dump($marcas);
       $signals = Location::query();
       foreach($marcas as $manufacturer){
         $signals->orWhere('manufacturer', '=', $manufacturer);
       }
 
-      dd($signals->get());
 
+      dd($signals->get()->count());
+      dd($redes);
 
     }
 }
