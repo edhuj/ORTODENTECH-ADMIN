@@ -204,8 +204,6 @@ class ApiController extends Controller
       #dd($request->input('o-manufacturer-status'));
       $marcas = $request->input('o-manufacturer-status');
       echo($marcas);
-      foreach ($marcas as $manufacturer ) {
-        echo($manufacturer);
-      }
+
     }
 }
