@@ -226,6 +226,7 @@ class ApiController extends Controller
       }
       $locations = Location::whereIn('manufacturer',$marcas)->whereIn('networkType',$networks)->get();
       $manufacturers = Location::select('manufacturer')->distinct()->get();
-      return view('location/index', compact('locations', 'manufacturers'));
+      #return view('location/index', compact('locations', 'manufacturers'));
+      return $locations;
     }
 }
