@@ -202,8 +202,6 @@ class ApiController extends Controller
 
     public function queryLocations(Request $request){
 
-      dd($request);
-      #dd($request->input('o-manufacturer-status'));
       $marcas = $request->input()['so-manufacturer-status'];
       $redes = $request->input()['so-network-status'];
 
@@ -227,8 +225,7 @@ class ApiController extends Controller
         }
       }
       $locations = Location::whereIn('manufacturer',$marcas)->whereIn('networkType',$networks)->get();
-      $manufacturers = Location::select('manufacturer')->distinct()->get();
-      #return view('location/index', compact('locations', 'manufacturers'));
+
       return $locations;
     }
 }
