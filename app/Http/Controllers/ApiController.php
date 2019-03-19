@@ -229,7 +229,7 @@ class ApiController extends Controller
         }
       }
 
-      return $signals->get();
+      dd($signals);
 
     }
 }
