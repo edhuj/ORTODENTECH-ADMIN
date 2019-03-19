@@ -210,9 +210,26 @@ class ApiController extends Controller
         $signals->orWhere('manufacturer', '=', $manufacturer);
       }
 
+      foreach($redes as $red){
+        if($red == '4G'){
+          $signals->orWhere('networkType', '=', '13');
+        }
+        if($red == '3G'){
+          $signals->orWhere('networkType', '=', '3');
+          $signals->orWhere('networkType', '=', '8');
+          $signals->orWhere('networkType', '=', '9');
+          $signals->orWhere('networkType', '=', '10');
+          $signals->orWhere('networkType', '=', '15');
+        }
+        if($red == '2G'){
 
-      dump($signals->get()->count());
-      dump($redes);
+        }
+        if($red == 'NN'){
+          $signals->orWhere('networkType', '=', '0');
+        }
+      }
+
+      return $signals;
 
     }
 }
