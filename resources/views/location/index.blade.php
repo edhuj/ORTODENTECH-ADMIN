@@ -142,7 +142,7 @@
                         <div class="block-content tab-content overflow-hidden">
                             <!-- Profile -->
                             <div class="tab-pane pull-x fade fade-up show active" id="so-profile" role="tabpanel">
-                                <form action="/api/query" method="GET">
+                                <form name="signum_filter_form" action="/api/query">
                                     <div class="block mb-0">
 
                                         <!-- Options -->
@@ -191,7 +191,7 @@
                                         <!-- Submit -->
                                         <div class="block-content row justify-content-center border-top">
                                             <div class="col-9">
-                                                <button type="submit" class="btn btn-block btn-hero-primary">
+                                                <button class="btn btn-block btn-hero-primary" onclick="invocar();return false;">
                                                     <i class="fa fa-fw fa-save mr-1"></i> Save
                                                 </button>
                                             </div>

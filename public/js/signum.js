@@ -33,15 +33,12 @@ function getRequest(){
 function procesar(responseText){
 	var jsonResponse = JSON.parse(responseText);
 
-
-	.
-	.
-	.
+  console.log("Hello dowl@!" + jsonResponse.length);
 
 }
 function invocar(){
-	var parameters = getParameters(document.formName);
-	sendAsyncRequest("urlSignum?"+parameters,"GET",null,procesar,fallo);
+	var parameters = getParameters(document.signum_filter_form);
+	sendAsyncRequest(document.signum_filter_form.action+"?"+parameters,"GET",null,procesar,fallo);
 	//----fin----
 }
 function getParameters(form) {
