@@ -64,6 +64,7 @@ function procesar(responseText){
       },
       radius:20
     });
+  }
 
 }
 function invocar(){
