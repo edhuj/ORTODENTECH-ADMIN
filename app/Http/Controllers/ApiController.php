@@ -241,7 +241,7 @@ class ApiController extends Controller
       foreach ($locations as $location) {
 
         dump($location);
-        $sqlQuery = "SELECT id, ( 3959 * acos( cos( radians(37) ) * cos( radians( CAST($location->latitude AS float))) * cos( radians( CAST(". $location->longitude." AS FLOAT) ) - radians(-122) ) + sin( radians(37) ) * sin( radians( CAST(".$location->latitude.") AS FLOAT ) ) ) ) AS distance FROM hexagons HAVING distance < 25 ORDER BY distance LIMIT 0 , 1";
+        $sqlQuery = "SELECT id, ( 3959 * acos( cos( radians(37) ) * cos( radians( CAST($location->latitude AS float))) * cos( radians( CAST($location->longitude AS FLOAT) ) - radians(-122) ) + sin( radians(37) ) * sin( radians( CAST($location->latitude) AS FLOAT ) ) ) ) AS distance FROM hexagons HAVING distance < 25 ORDER BY distance LIMIT 0 , 1";
         $result = DB::select(DB::raw($sqlQuery));
 
         echo($result);
