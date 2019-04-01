@@ -36,7 +36,7 @@ function procesar(responseText){
 
 	console.log(signalLocations);
 	for(var i=0; i<signalLocations["data"].length; i++){
-		console.log(signalLocations[i].latitude+"..."+signalLocations[i].longitude);
+		console.log(signalLocations["data"][i].latitude+"..."+signalLocations["data"][i].longitude);
 	}
   /*for (i = 0; i < signalLocations.length; i++) {
     mycolor = '#31a354';
