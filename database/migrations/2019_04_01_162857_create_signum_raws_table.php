@@ -40,8 +40,7 @@ class CreateSignumRawsTable extends Migration
             $table->string('level');
             $table->string('networkType');
             $table->string('gpsEnabled');
-            $table->string('isgsm');
-            $table->integer('signum_hexagon_id')->default(0);
+            $table->string('isgsm');            
             $table->timestamps();
         });
     }

@@ -15,6 +15,7 @@ use App\Http\Resources\QuestionCollection;
 use App\Http\Resources\User as ApiUser;
 use App\Http\Resources\Answer as ApiAnswer;
 use App\Http\Resources\Post as ApiPost;
+use App\Http\Resources\SignumRaw as ApiSignum;
 use Illuminate\Http\Request;
 
 class ApiController extends Controller
@@ -285,5 +286,10 @@ class ApiController extends Controller
         $signumData->save();
       }
       dump(SignumRaw::all()->count());
+    }
+
+    public function queryHexagon(){
+      $hexagons = SignumRaw::selectRaw('AVG(level) as average, signum_hexagon_id')->groupBy('signum_hexagon_id')->get();
+      return ApiSignum::collection($hexagons);
     }
 }
