@@ -239,8 +239,12 @@ class ApiController extends Controller
     public function getMatrix(){
       $locations = Location::first();
       foreach ($locations as $location) {
-
-        $users = DB::statement('SELECT id, ( 3959 * acos( cos( radians(37) ) * cos( radians( CAST($location->latitude AS float) ) ) * cos( radians( CAST($location->longitude AS FLOAT) ) - radians(-122) ) + sin( radians(37) ) * sin( radians( CAST($location->latitude) AS FLOAT ) ) ) ) AS distance FROM hexagons HAVING distance < 25 ORDER BY distance LIMIT 0 , 1;');
+        $users = DB::table('locations')
+                    ->select('id')
+                    ->select('( 3959 * acos( cos( radians(37) ) * cos( radians( CAST($location->latitude AS float) ) ) * cos( radians( CAST($location->longitude AS FLOAT) ) - radians(-122) ) + sin( radians(37) ) * sin( radians( CAST($location->latitude) AS FLOAT ) ) ) ) AS distance')
+                    ->having('distance', '<1000')
+                    ->orderBy('distance', 'desc')
+                    ->get();
         echo($users);
       }
     }
