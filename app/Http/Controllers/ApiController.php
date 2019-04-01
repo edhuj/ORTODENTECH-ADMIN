@@ -247,7 +247,7 @@ class ApiController extends Controller
         dump($sqlQuery);
         $result = DB::select(DB::raw($sqlQuery));
 
-        echo($result);
+        var_dump($result);
       }
     }
 }
