@@ -208,7 +208,7 @@
             <main id="main-container">
               <div id="map"></div>
               <script async defer
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGAOvDgtDnuRnLbShwZpEGVZTRPZNINIQ&callback=initMap">
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGAOvDgtDnuRnLbShwZpEGVZTRPZNINIQ&callback=initMap&libraries=geometry">
               </script>
                 <!-- Page Content -->
                 <div class="content">
