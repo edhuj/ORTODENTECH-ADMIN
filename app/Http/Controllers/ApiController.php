@@ -237,7 +237,7 @@ class ApiController extends Controller
     }
 
     public function getMatrix(){
-      $locations = Location::all()->get(5);
+      $locations = Location::all();
       foreach ($locations as $location) {
 
         $sqlQuery = "SELECT id, latitude, longitude, ( 3959 * acos( cos( radians($location->latitude) ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians($location->longitude) ) + sin( radians($location->latitude) ) * sin( radians( latitude ) ) ) ) AS distance FROM hexagons HAVING distance < 100 ORDER BY distance LIMIT 0 , 10";
