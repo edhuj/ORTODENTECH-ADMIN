@@ -15,8 +15,8 @@ class CreateHexagonsTable extends Migration
     {
         Schema::create('hexagons', function (Blueprint $table) {
             $table->increments('id');
-            $table->increments('latitude');
-            $table->increments('longitude');
+            $table->string('latitude');
+            $table->string('longitude');
             $table->timestamps();
         });
     }
