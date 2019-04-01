@@ -1,4 +1,4 @@
-function sendAsyncRequest(url, method, params, callback,fallback) {
+function sendAsyncRequest(url, method, params, callback, fallback) {
 	var request = getRequest();
 	request.open(method, url, true);
 
@@ -33,9 +33,9 @@ function getRequest(){
 
 function procesar(responseText){
 	var signalLocations = JSON.parse(responseText);
-	
 
-  for (i = 0; i < signalLocations.length; i++) {
+	console.log(signalLocations);
+  /*for (i = 0; i < signalLocations.length; i++) {
     mycolor = '#31a354';
 
     if(parseInt(signalLocations[i].level) == 1){
@@ -65,7 +65,7 @@ function procesar(responseText){
       },
       radius:20
     });
-  }
+  }*/
 
 }
 function invocar(){
