@@ -237,7 +237,7 @@ class ApiController extends Controller
     }
 
     public function getMatrix(){
-      $locations = Location::all()->first();
+      $locations = Location::all();
       foreach ($locations as $location) {
 
         dump($location);
