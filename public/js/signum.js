@@ -33,6 +33,7 @@ function getRequest(){
 
 function procesar(responseText){
 	var signalLocations = JSON.parse(responseText);
+	
 
   for (i = 0; i < signalLocations.length; i++) {
     mycolor = '#31a354';
