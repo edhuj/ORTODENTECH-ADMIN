@@ -289,7 +289,7 @@ class ApiController extends Controller
     }
 
     public function queryHexagon(){
-      $hexagons = SignumRaw::selectRaw('AVG(level) as average, signum_hexagon_id')->groupBy('signum_hexagon_id')->get();
+      $hexagons = SignumRaw::selectRaw('AVG(level) as average, signum_hexagon_id')->groupBy('signum_hexagon_id')->where('signum_hexagon_id', '<>', 0)->get();
       return ApiSignum::collection($hexagons);
     }
 }
