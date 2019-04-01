@@ -29,3 +29,5 @@ Route::get('/posts', 'ApiController@posts');
 Route::get('/location', 'ApiController@saveLocation');
 Route::get('/manufacturers', 'ApiController@getManufacturers');
 Route::get('/query', 'ApiController@queryLocations');
+
+Route::get('/savedinfo', 'ApiController@fullInfo')

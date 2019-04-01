@@ -228,4 +228,9 @@ class ApiController extends Controller
       $manufacturers = Location::select('manufacturer')->distinct()->get();
       return view('location/index', compact('locations', 'manufacturers'));
     }
+
+    public fullInfo(){
+      $locations = Location::all();
+      return $locations;
+    }
 }
