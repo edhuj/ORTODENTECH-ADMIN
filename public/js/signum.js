@@ -98,8 +98,6 @@ function drawHexagon(map, position, radius, fillColor){
 				 coordinates.push(google.maps.geometry.spherical.computeOffset(position, radius, angle));
 			}
 
-			window.peruvianHive.push(position);
-			//console.log(position.lat()+","+position.lng());
 			// Construct the polygon.
 			var polygon = new google.maps.Polygon({
 					paths: coordinates,
