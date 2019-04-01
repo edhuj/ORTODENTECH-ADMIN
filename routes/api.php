@@ -32,4 +32,4 @@ Route::get('/query', 'ApiController@queryLocations');
 
 Route::get('/savedinfo', 'ApiController@fullInfo');
 Route::get('/matrix', 'ApiController@getMatrix');
-Route::get('/hexagondata', 'ApiController@queryHexagon')
+Route::get('/hexagondata', 'ApiController@queryHexagon');
