@@ -242,7 +242,7 @@ class ApiController extends Controller
 
         dump($location);
         $sqlQuery = "SELECT id, ( 3959*acos(cos(radians(37)) * cos(radians($location->latitude )) * cos(radians($location->longitude) -
-                      radians(-122)) + sin(radians(37)) * sin(radians($location->latitude))) AS distance FROM hexagons HAVING distance < 25 ORDER BY distance LIMIT 0 , 10";
+                      radians(-122)) + sin(radians(37)) * sin(radians($location->latitude)))) AS distance FROM hexagons HAVING distance < 25 ORDER BY distance LIMIT 0 , 10";
 
         dump($sqlQuery);
         $result = DB::select(DB::raw($sqlQuery));
