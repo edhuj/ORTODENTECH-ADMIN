@@ -72,9 +72,17 @@ function invocar(){
 	sendAsyncRequest(document.signum_filter_form.action+"?"+parameters,"GET",null,procesar,fallo);
 	//----fin----
 }
+<<<<<<< HEAD
 function fallo(){
   console.log("No seas weon pe");
 }
+=======
+
+function fallo(){
+  console.log("No seas weon pe");
+}
+
+>>>>>>> d54bee2422d3ddb675f10b6bcdbd0d3ba8cce8fa
 function getParameters(form) {
 	var params = "";
 	for ( var i = 0; i < form.elements.length; i++) {

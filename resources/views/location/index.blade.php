@@ -34,7 +34,7 @@
 
           signalLocations = {!!json_encode($locations)!!};
 
-          var map = new google.maps.Map(document.getElementById('map'), {
+          window.map = new google.maps.Map(document.getElementById('map'), {
             zoom: 11,
             center: {lat:-12.066910, lng:-77.023073},
             styles: [
@@ -69,44 +69,6 @@
             }
           ]
           });
-
-
-          console.log(signalLocations.length);
-          for (i = 0; i < signalLocations.length; i++) {
-            console.log("Hello "+signalLocations[i].accuracy);
-            if(parseInt(signalLocations[i].networkType) == 15 ){ //3G
-                if(parseInt(signalLocations[i].level) == 1){
-                  mycolor = '#f03b20'
-                }
-                if(parseInt(signalLocations[i].level) == 2){
-                  mycolor = '#feb24c'
-                }
-                if(parseInt(signalLocations[i].level) == 3){
-                  mycolor = '#ffeda0'
-                }
-                if(parseInt(signalLocations[i].level) == 4){
-                  mycolor = '#31a354'
-                }
-                if(parseInt(signalLocations[i].level) == 5){
-                  mycolor = '#31a354'
-                }
-            }
-            else if(parseInt(signalLocations[i].networkType) == 13){//4G
-              mycolor = '#0000ff'
-            }
-            new google.maps.Circle({
-              strokeColor: mycolor,
-              strokeOpacity: 1.0,
-              strokeWeight: 2,
-              fillColor: mycolor,
-              fillOpacity: 1.0,
-              map: map,
-              center: {
-                lat: parseFloat(signalLocations[i].latitude),lng: parseFloat(signalLocations[i].longitude),
-              },
-              radius:20
-            });
-          }
 
         }
       </script>
@@ -147,7 +109,7 @@
                         <div class="block-content tab-content overflow-hidden">
                             <!-- Profile -->
                             <div class="tab-pane pull-x fade fade-up show active" id="so-profile" role="tabpanel">
-                                <form action="/api/query" method="GET">
+                                <form name="signum_filter_form" action="/api/query">
                                     <div class="block mb-0">
 
                                         <!-- Options -->
@@ -196,9 +158,9 @@
                                         <!-- Submit -->
                                         <div class="block-content row justify-content-center border-top">
                                             <div class="col-9">
-                                                <button type="submit" class="btn btn-block btn-hero-primary">
+                                                <input  value = "Check" type ="button" class="btn btn-block btn-hero-primary" onclick="invocar();return false;">
                                                     <i class="fa fa-fw fa-save mr-1"></i> Save
-                                                </button>
+                                                </input>
                                             </div>
                                         </div>
                                         <!-- END Submit -->
@@ -213,7 +175,6 @@
                 <!-- END Side Content -->
             </aside>
             <!-- END Side Overlay -->
-
 
             <!-- Header -->
             <header id="page-header">
@@ -251,8 +212,6 @@
               </script>
                 <!-- Page Content -->
                 <div class="content">
-
-
                 </div>
                 <!-- END Page Content -->
 
@@ -269,5 +228,6 @@
         <script src="/js/plugins/chart.js/Chart.bundle.min.js"></script>
         <script src="/js/pages/be_pages_dashboard.min.js"></script>
         <script>jQuery(function(){ Dashmix.helpers('sparkline'); });</script>
+        <script src="/js/signum.js"> </script>
     </body>
 </html>

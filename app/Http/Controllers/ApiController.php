@@ -201,10 +201,10 @@ class ApiController extends Controller
     }
 
     public function queryLocations(Request $request){
-      #dd($request->input('o-manufacturer-status'));
+
       $marcas = $request->input()['so-manufacturer-status'];
       $redes = $request->input()['so-network-status'];
-
+      
       $networks = array();
       foreach($redes as $red){
         if($red == '4G'){
@@ -224,9 +224,9 @@ class ApiController extends Controller
           array_push($networks, '0');
         }
       }
-      $locations = Location::whereIn('manufacturer',$marcas)->whereIn('networkType',$networks);
-      $manufacturers = Location::select('manufacturer')->distinct()->get();
-      return view('location/index', compact('locations', 'manufacturers'));
+      $locations = Location::select('level','latitude','longitude')->whereIn('manufacturer',$marcas)->whereIn('networkType',$networks)->get();
+
+      return $locations;
     }
 
     public fullInfo(){
