@@ -233,6 +233,34 @@ class ApiController extends Controller
       return $locations;
     }
 
+    public function queryHexagons(Request $request){
+
+      $marcas = $request->input()['so-manufacturer-status'];
+      $redes = $request->input()['so-network-status'];
+
+      $networks = array();
+      foreach($redes as $red){
+        if($red == '4G'){
+          array_push($networks, '13');
+        }
+        if($red == '3G'){
+          array_push($networks, '3');
+          array_push($networks, '8');
+          array_push($networks, '9');
+          array_push($networks, '10');
+          array_push($networks, '15');
+        }
+        if($red == '2G'){
+
+        }
+        if($red == 'NN'){
+          array_push($networks, '0');
+        }
+      }
+      $hexagons = SignumRaw::selectRaw('AVG(level) as average, signum_hexagon_id')->whereIn('manufacturer',$marcas)->whereIn('networkType',$networks)->groupBy('signum_hexagon_id')->where('signum_hexagon_id', '<>', 0)->get();
+      return ApiSignum::collection($hexagons);
+    }
+
     public function fullInfo(){
       $locations = Location::all();
       return $locations;
