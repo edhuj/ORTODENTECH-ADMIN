@@ -72,11 +72,10 @@ function invocar(){
 	sendAsyncRequest(document.signum_filter_form.action+"?"+parameters,"GET",null,procesar,fallo);
 	//----fin----
 }
-<<<<<<< HEAD
+
 function fallo(){
   console.log("No seas weon pe");
 }
-=======
 
 function fallo(){
   console.log("No seas weon pe");
