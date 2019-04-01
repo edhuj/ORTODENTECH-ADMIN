@@ -35,7 +35,7 @@ function procesar(responseText){
 	var signalLocations = JSON.parse(responseText);
 
 	console.log(signalLocations);
-	for(var i=0; i<signalLocations.length; i++){
+	for(var i=0; i<signalLocations["data"].length; i++){
 		console.log(signalLocations[i].latitude+"..."+signalLocations[i].longitude);
 	}
   /*for (i = 0; i < signalLocations.length; i++) {
