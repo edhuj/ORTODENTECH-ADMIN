@@ -9,6 +9,7 @@ use App\Post;
 use App\Location;
 use App\Hexagon;
 
+use Illuminate\Support\Facades\DB;
 use App\Http\Resources\QuestionCollection;
 use App\Http\Resources\User as ApiUser;
 use App\Http\Resources\Answer as ApiAnswer;
