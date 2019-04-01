@@ -235,7 +235,7 @@ class ApiController extends Controller
       return $locations;
     }
 
-    public funcion getMatrix(){
+    public function getMatrix(){
       $locations = Location::all();
       foreach ($locations as $location) {
         echo($location);
