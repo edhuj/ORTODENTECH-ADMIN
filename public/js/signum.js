@@ -54,7 +54,7 @@ function procesar(responseText){
         mycolor = '#31a354'
     }
 
-		drawHexagon(window.map, new LatLng(signalLocations["data"][i].latitude, signalLocations["data"][i].longitude), 500, mycolor);
+		drawHexagon(window.map, new google.maps.LatLng(signalLocations["data"][i].latitude, signalLocations["data"][i].longitude), 500, mycolor);
 
 	}
   /*for (i = 0; i < signalLocations.length; i++) {
@@ -92,15 +92,6 @@ function procesar(responseText){
 }
 
 function drawHexagon(map, position, radius, fillColor){
-			if(!google.maps.geometry.poly.containsLocation(position,window.polygonLima) &&
-					!google.maps.geometry.poly.containsLocation(position,window.polygonLima2) &&
-					!google.maps.geometry.poly.containsLocation(position,window.polygonCallao) &&
-					!google.maps.geometry.poly.containsLocation(position,window.polygonCallao1) &&
-					!google.maps.geometry.poly.containsLocation(position,window.polygonCallao2) ){
-				return;
-			}
-
-			saveHexagon(position);
 
 			var coordinates = [];
 			for(var angle= 0;angle < 360; angle+=60) {
