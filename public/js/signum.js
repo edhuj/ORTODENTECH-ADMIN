@@ -37,6 +37,25 @@ function procesar(responseText){
 	console.log(signalLocations);
 	for(var i=0; i<signalLocations["data"].length; i++){
 		console.log(signalLocations["data"][i].latitude+"..."+signalLocations["data"][i].longitude);
+		mycolor = '#31a354';
+		if(parseFloat(signalLocations["data"][i].average) <= 1){
+        mycolor = '#f03b20'
+    }
+		if(parseFloat(signalLocations["data"][i].average) > 1 && parseFloat(signalLocations["data"][i].average) <= 2 ){
+        mycolor = '#feb24c'
+    }
+		if(parseFloat(signalLocations["data"][i].average) > 2 && parseFloat(signalLocations["data"][i].average) <= 3 ){
+        mycolor = '#ffeda0'
+    }
+		if(parseFloat(signalLocations["data"][i].average) > 3 && parseFloat(signalLocations["data"][i].average) <= 4 ){
+        mycolor = '#31a354'
+    }
+		if(parseFloat(signalLocations["data"][i].average) > 4 && parseFloat(signalLocations["data"][i].average) <= 5 ){
+        mycolor = '#31a354'
+    }
+
+		drawHexagon(window.map, new LatLng(signalLocations["data"][i].latitude, signalLocations["data"][i].longitude), 500, mycolor);
+
 	}
   /*for (i = 0; i < signalLocations.length; i++) {
     mycolor = '#31a354';
@@ -71,6 +90,39 @@ function procesar(responseText){
   }*/
 
 }
+
+function drawHexagon(map, position, radius, fillColor){
+			if(!google.maps.geometry.poly.containsLocation(position,window.polygonLima) &&
+					!google.maps.geometry.poly.containsLocation(position,window.polygonLima2) &&
+					!google.maps.geometry.poly.containsLocation(position,window.polygonCallao) &&
+					!google.maps.geometry.poly.containsLocation(position,window.polygonCallao1) &&
+					!google.maps.geometry.poly.containsLocation(position,window.polygonCallao2) ){
+				return;
+			}
+
+			saveHexagon(position);
+
+			var coordinates = [];
+			for(var angle= 0;angle < 360; angle+=60) {
+				 coordinates.push(google.maps.geometry.spherical.computeOffset(position, radius, angle));
+			}
+
+			window.peruvianHive.push(position);
+			//console.log(position.lat()+","+position.lng());
+			// Construct the polygon.
+			var polygon = new google.maps.Polygon({
+					paths: coordinates,
+					strokeColor: '#FF0000',
+					strokeOpacity: 0.8,
+					strokeWeight: 2,
+					fillColor: '#FF0000',
+					fillOpacity: 0.35
+			});
+			polygon.setMap(map);
+			map.setCenter(position);
+	}
+
+
 function invocar(){
 	var parameters = getParameters(document.signum_filter_form);
 	sendAsyncRequest(document.signum_filter_form.action+"?"+parameters,"GET",null,procesar,fallo);
