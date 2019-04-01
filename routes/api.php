@@ -31,3 +31,4 @@ Route::get('/manufacturers', 'ApiController@getManufacturers');
 Route::get('/query', 'ApiController@queryLocations');
 
 Route::get('/savedinfo', 'ApiController@fullInfo');
+Route::get('/matrix', 'ApiController@getMatrix');
