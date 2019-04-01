@@ -7,7 +7,7 @@ use App\User;
 use App\Answer;
 use App\Post;
 use App\Location;
-use App\Location;
+use App\Hexagon;
 
 use App\Http\Resources\QuestionCollection;
 use App\Http\Resources\User as ApiUser;
