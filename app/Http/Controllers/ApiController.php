@@ -279,7 +279,7 @@ class ApiController extends Controller
         foreach ($result as $raw) {
           #dump($raw->id);
           #dump($raw->distance);
-          $signumData->hexagon_id = $raw->id;
+          $signumData->signum_hexagon_id = $raw->id;
         }
 
         $signumData->save();
