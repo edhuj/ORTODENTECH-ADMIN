@@ -15,9 +15,11 @@ class SignumRaw extends JsonResource
      */
     public function toArray($request)
     {
-      return parent::toArray('id' => $this->id,
-            'latitude' => SignumRaw::find($this->id)->latitude,
-            'longitude' => SignumRaw::find($this->id)->longitude,
-            'average' => $this->average,);
+      return
+          [ 'id' => $this->signum_hexagon_id,
+            'latitude' => SignumRaw::find($this->signum_hexagon_id)->latitude,
+            'longitude' => SignumRaw::find($this->signum_hexagon_id)->longitude,
+            'average' => $this->average,
+          ];
     }
 }
