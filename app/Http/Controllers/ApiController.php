@@ -8,6 +8,7 @@ use App\Answer;
 use App\Post;
 use App\Location;
 use App\Hexagon;
+use App\SignumRaw;
 
 use Illuminate\Support\Facades\DB;
 use App\Http\Resources\QuestionCollection;
