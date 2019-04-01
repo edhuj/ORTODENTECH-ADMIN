@@ -3,7 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-use App\SignumRaw;
+use App\SignumRaw as Signum;
 
 class SignumRaw extends JsonResource
 {
@@ -17,8 +17,8 @@ class SignumRaw extends JsonResource
     {
       return
           [ 'id' => $this->signum_hexagon_id,
-            'latitude' => SignumRaw::find($this->signum_hexagon_id)->latitude,
-            'longitude' => SignumRaw::find($this->signum_hexagon_id)->longitude,
+            'latitude' => Signum::find($this->signum_hexagon_id)->latitude,
+            'longitude' => Signum::find($this->signum_hexagon_id)->longitude,
             'average' => $this->average,
           ];
     }
