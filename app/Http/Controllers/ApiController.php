@@ -258,7 +258,6 @@ class ApiController extends Controller
         }
       }
       $hexagons = SignumRaw::selectRaw('AVG(level) as average, signum_hexagon_id')->whereIn('manufacturer',$marcas)->whereIn('networkType',$networks)->groupBy('signum_hexagon_id')->where('signum_hexagon_id', '<>', 0)->get();
-      dump(ApiSignum::collection($hexagons));
       return ApiSignum::collection($hexagons);
     }
 
