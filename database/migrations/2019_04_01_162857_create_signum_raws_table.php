@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLocationsTable extends Migration
+class CreateSignumRawsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateLocationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('locations', function (Blueprint $table) {
+        Schema::create('signum_raws', function (Blueprint $table) {
             $table->increments('id');
             $table->string('manufacturer');
             $table->string('model');
@@ -41,6 +41,7 @@ class CreateLocationsTable extends Migration
             $table->string('networkType');
             $table->string('gpsEnabled');
             $table->string('isgsm');
+            $table->integer('hexagon_id');
             $table->timestamps();
         });
     }
@@ -52,6 +53,6 @@ class CreateLocationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('locations');
+        Schema::dropIfExists('signum_raws');
     }
 }

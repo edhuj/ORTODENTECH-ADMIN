@@ -244,10 +244,43 @@ class ApiController extends Controller
 
         $result = DB::select(DB::raw($sqlQuery));
 
+        $signumData = new SignumRaw();
+
+        $signumData->manufacturer = $location->manufacturer;
+        $signumData->model = $location->model;
+        $signumData->version_release = $location->version_release;
+        $signumData->version_name = $location->version_name;
+
+        $signumData->provider = $location->provider;
+        $signumData->accuracy = $location->accuracy;
+        $signumData->latitude = $location->latitude;
+        $signumData->longitude = $location->longitude;
+
+        $signumData->cdmaDbm = $location->cdmaDbm;
+        $signumData->cdmaEcio = $location->cdmaEcio;
+        $signumData->evdoDbm = $location->evdoDbm;
+        $signumData->evdoEcio = $location->evdoEcio;
+        $signumData->evdoSnr = $location->evdoSnr;
+        $signumData->gsmBitErrorRate = $location->gsmBitErrorRate;
+        $signumData->mLteRsrp = $location->mLteRsrp;
+        $signumData->mLteRsrq = $location->mLteRsrq;
+        $signumData->mLteRssnr = $location->mLteRssnr;
+        $signumData->mLteCqi = $location->mLteCqi;
+
+        $signumData->signal = $location->signal;
+        $signumData->level = $location->level;
+        $signumData->networkType = $location->networkType;
+        $signumData->gpsEnabled = $location->gpsEnabled;
+        $signumData->isgsm = $location->isgsm;
+
+
         foreach ($result as $raw) {
           dump($raw->id);
           dump($raw->distance);
+          $signumData->hexagon_id = $raw->id;
         }
+
+        $signumData->save();
       }
     }
 }
