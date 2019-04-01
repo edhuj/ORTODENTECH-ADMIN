@@ -41,6 +41,7 @@ class CreateLocationsTable extends Migration
             $table->string('networkType');
             $table->string('gpsEnabled');
             $table->string('isgsm');
+            $table->integer('hexagon_id')->nullable();
             $table->timestamps();
         });
     }
