@@ -82,7 +82,9 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 			google.maps.event.addListener(polygon, 'click', function (event) {
         //alert the index of the polygon
         alert(polygon.indexID);
-
+				$(".modal-header .modal-title").text(this.title);
+    		$(".modal-body #modalLatLng").text(this.position);
+    		$('#myModal').modal('show');
     	});
 			polygon.setMap(map);
 			map.setCenter(position);
