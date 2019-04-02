@@ -17,8 +17,8 @@ class SignumRaw extends JsonResource
     {
       return
           [ 'id' => $this->signum_hexagon_id,
-            'latitude' => Signum::find($this->signum_hexagon_id)->latitude,
-            'longitude' => Signum::find($this->signum_hexagon_id)->longitude,
+            'latitude' => Hexagon::find($this->signum_hexagon_id)->latitude,
+            'longitude' => Hexagon::find($this->signum_hexagon_id)->longitude,
             'average' => $this->average,
           ];
     }

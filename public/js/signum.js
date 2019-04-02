@@ -54,40 +54,10 @@ function procesar(responseText){
         mycolor = '#31a354'
     }
 
-		drawHexagon(window.map, new google.maps.LatLng(signalLocations["data"][i].latitude, signalLocations["data"][i].longitude), 500, mycolor);
+		drawHexagon(window.map, new google.maps.LatLng(signalLocations["data"][i].latitude, signalLocations["data"][i].longitude), 250, mycolor);
 
 	}
-  /*for (i = 0; i < signalLocations.length; i++) {
-    mycolor = '#31a354';
-
-    if(parseInt(signalLocations[i].level) == 1){
-        mycolor = '#f03b20'
-    }
-    if(parseInt(signalLocations[i].level) == 2){
-      mycolor = '#feb24c'
-    }
-    if(parseInt(signalLocations[i].level) == 3){
-      mycolor = '#ffeda0'
-    }
-    if(parseInt(signalLocations[i].level) == 4){
-      mycolor = '#31a354'
-    }
-    if(parseInt(signalLocations[i].level) == 5){
-      mycolor = '#31a354'
-    }
-    new google.maps.Circle({
-      strokeColor: mycolor,
-      strokeOpacity: 1.0,
-      strokeWeight: 2,
-      fillColor: mycolor,
-      fillOpacity: 1.0,
-      map: window.map,
-      center: {
-        lat: parseFloat(signalLocations[i].latitude),lng: parseFloat(signalLocations[i].longitude),
-      },
-      radius:20
-    });
-  }*/
+  
 
 }
 
