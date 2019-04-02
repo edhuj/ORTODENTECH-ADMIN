@@ -82,14 +82,23 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 			google.maps.event.addListener(polygon, 'click', function (event) {
         //alert the index of the polygon
 
+				getHexagonData();
 				$(".modal-header .modal-title").text("Detalle del punto");
-    		$(".modal-body #modalLatLng").text(this.position);
-    		$('#myModal').modal('show');
+    		$(".signum_data_table").text(this.position);
+				$('#myModal').modal('show');
+
     	});
 			polygon.setMap(map);
 			map.setCenter(position);
 	}
 
+	function getHexagonData(hexagonId){
+		sendAsyncRequest("/api/hexagondetail?id="hexagonId, "GET", null, showHexagonData, fallo)
+	}
+
+	function showHexagonData(responseText){
+		
+	}
 
 function invocar(){
 	var parameters = getParameters(document.signum_filter_form);

@@ -320,4 +320,9 @@ class ApiController extends Controller
       $hexagons = SignumRaw::selectRaw('AVG(level) as average, signum_hexagon_id')->groupBy('signum_hexagon_id')->where('signum_hexagon_id', '<>', 0)->get();
       return ApiSignum::collection($hexagons);
     }
+
+    public function hexagonDetail(){
+
+      return SignumRaw::selectRaw('count(id) as counter, avg(level) as average , manufacturer')->where('signum_hexagon_id', $id)->groupBy(['manufacturer'])->get();
+    }
 }

@@ -34,3 +34,4 @@ Route::get('/hexaquery', 'ApiController@queryHexagons');
 Route::get('/savedinfo', 'ApiController@fullInfo');
 Route::get('/matrix', 'ApiController@getMatrix');
 Route::get('/hexagondata', 'ApiController@queryHexagon');
+Route::get('/hexagondetail', 'ApiController@hexagonDetail');
