@@ -97,10 +97,17 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 	}
 
 	function showHexagonData(responseText){
+			var table = document.getElementById("signum_data_table");
 			hexagonData = JSON.parse(responseText);
-			$('#signum_data_table tbody').html("");
+			//$('#signum_data_table tbody').html("");
+
+			var Parent = document.getElementById("signum_data_table");
+			while(Parent.hasChildNodes())
+			{
+	 			Parent.removeChild(Parent.firstChild);
+			}
+
 			for(var i=0; i<hexagonData.length; i++){
-				var table = document.getElementById("signum_data_table");
 				var row = table.insertRow(i);
 
 				var cell1 = row.insertCell(0);
