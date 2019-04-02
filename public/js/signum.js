@@ -93,11 +93,11 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 	}
 
 	function getHexagonData(hexagonId){
-		sendAsyncRequest("/api/hexagondetail?id="hexagonId, "GET", null, showHexagonData, fallo);
+		sendAsyncRequest("/api/hexagondetail?id="+hexagonId, "GET", null, showHexagonData, fallo);
 	}
 
 	function showHexagonData(responseText){
-		
+
 	}
 
 function invocar(){
