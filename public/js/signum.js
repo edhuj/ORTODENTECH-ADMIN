@@ -126,7 +126,7 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 				// Add some text to the new cells:
 				cell1.innerHTML = hexagonData[i]['manufacturer'];
 				cell2.innerHTML = hexagonData[i]['counter'];
-				cell3.innerHTML = hexagonData[i]['average'];
+				cell3.innerHTML = hexagonData[i]['average'].toFixed(2);
 			}
 	}
 
