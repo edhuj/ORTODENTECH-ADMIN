@@ -232,35 +232,17 @@
               <table class="table table-bordered table-striped table-vcenter" id="signum_data_table">
                   <thead>
                       <tr>
-                          <th style="width: 20%;">Name</th>
-                          <th style="width: 10%;">Email</th>
-                          <th style="width: 10%;">City</th>
-                          <th style="width: 10%;">Age</th>
-                          <th class="text-center" style="width: 100px;">Actions</th>
+                          <th style="width: 20%;">Marca</th>
+                          <th style="width: 10%;">Mediciones</th>
+                          <th style="width: 10%;">Promedio</th>
                       </tr>
                   </thead>
                   <tbody>
-                      @foreach($users as $user)
                         <tr>
-
-                            <td class="font-w600">
-                                <a href="be_pages_generic_profile.html">{{$user->name}}</a>
-                            </td>
-                            <td>{{$user->email}}</td>
-                            <td>{{$user->city}}</td>
-                            <td>{{$user->birthday}}</td>
-                            <td class="text-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" title="Edit">
-                                        <i class="fa fa-pencil-alt"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" title="Delete">
-                                        <i class="fa fa-times"></i>
-                                    </button>
-                                </div>
-                            </td>
+                            <td>Motorola</td>
+                            <td>45</td>
+                            <td>3.5</td>
                         </tr>
-                      @endforeach
                   </tbody>
               </table>
               <div class="modal-footer">
