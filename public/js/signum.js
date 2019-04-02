@@ -39,19 +39,19 @@ function procesar(responseText){
 		console.log(signalLocations["data"][i].latitude+"..."+signalLocations["data"][i].longitude);
 		mycolor = '#31a354';
 		if(parseFloat(signalLocations["data"][i].average) <= 1){
-        mycolor = '#f03b20'
+        mycolor = '#f03b20';
     }
 		if(parseFloat(signalLocations["data"][i].average) > 1 && parseFloat(signalLocations["data"][i].average) <= 2 ){
-        mycolor = '#feb24c'
+        mycolor = '#feb24c';
     }
 		if(parseFloat(signalLocations["data"][i].average) > 2 && parseFloat(signalLocations["data"][i].average) <= 3 ){
-        mycolor = '#ffeda0'
+        mycolor = '#ffeda0';
     }
 		if(parseFloat(signalLocations["data"][i].average) > 3 && parseFloat(signalLocations["data"][i].average) <= 4 ){
-        mycolor = '#31a354'
+        mycolor = '#31a354';
     }
 		if(parseFloat(signalLocations["data"][i].average) > 4 && parseFloat(signalLocations["data"][i].average) <= 5 ){
-        mycolor = '#31a354'
+        mycolor = '#31a354';
     }
 
 		drawHexagon(window.map, new google.maps.LatLng(signalLocations["data"][i].latitude, signalLocations["data"][i].longitude), 250, mycolor, signalLocations["data"][i]["id"]);
@@ -93,11 +93,11 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 	}
 
 	function getHexagonData(hexagonId){
-		sendAsyncRequest("/api/hexagondetail?id="hexagonId, "GET", null, showHexagonData, fallo)
+		sendAsyncRequest("/api/hexagondetail?id="hexagonId, "GET", null, showHexagonData, fallo);
 	}
 
 	function showHexagonData(responseText){
-		
+
 	}
 
 function invocar(){
