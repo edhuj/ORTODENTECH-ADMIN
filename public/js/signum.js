@@ -82,7 +82,7 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 			google.maps.event.addListener(polygon, 'click', function (event) {
         //alert the index of the polygon
 
-				getHexagonData();
+				getHexagonData(polygon.indexID);
 				$(".modal-header .modal-title").text("Detalle del punto");
     		$(".signum_data_table").text(this.position);
 				$('#myModal').modal('show');
