@@ -97,7 +97,20 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 	}
 
 	function showHexagonData(responseText){
+			hexagonData = JSON.parse(responseText);
+			$('#signum_data_table tbody').html("")
+			for(var i=0; i<hexagonData.length; i++){
+				var row = $('#signum_data_table').insertRow(i);
 
+				var cell1 = row.insertCell(0);
+				var cell2 = row.insertCell(1);
+				var cell3 = row.insertCell(2);
+
+				// Add some text to the new cells:
+				cell1.innerHTML = hexagondata[i]['manufacturer'];
+				cell2.innerHTML = hexagondata[i]['counter'];
+				cell3.innerHTML = hexagondata[i]['average'];
+			}
 	}
 
 function invocar(){
