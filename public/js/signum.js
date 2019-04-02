@@ -108,9 +108,9 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 				var cell3 = row.insertCell(2);
 
 				// Add some text to the new cells:
-				cell1.innerHTML = hexagondata[i]['manufacturer'];
-				cell2.innerHTML = hexagondata[i]['counter'];
-				cell3.innerHTML = hexagondata[i]['average'];
+				cell1.innerHTML = hexagonData[i]['manufacturer'];
+				cell2.innerHTML = hexagonData[i]['counter'];
+				cell3.innerHTML = hexagonData[i]['average'];
 			}
 	}
 
