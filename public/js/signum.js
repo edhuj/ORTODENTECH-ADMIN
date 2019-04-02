@@ -80,8 +80,8 @@ function drawHexagon(map, position, radius, fillColor){
 
 			google.maps.event.addListener(polygon, 'click', function (event) {
         //alert the index of the polygon
-        alert(p.indexID);
-				
+        alert(polygon.paths[0]);
+
     	});
 			polygon.setMap(map);
 			map.setCenter(position);
