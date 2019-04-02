@@ -54,7 +54,7 @@ function procesar(responseText){
         mycolor = '#31a354';
     }
 
-		drawHexagon(window.map, new google.maps.LatLng(signalLocations["data"][i].latitude, signalLocations["data"][i].longitude), 250, mycolor, signalLocations["data"][i]["id"]);
+		drawHexagon(window.map, new google.maps.LatLng(signalLocations["data"][i].latitude, signalLocations["data"][i].longitude), 500, mycolor, signalLocations["data"][i]["id"]);
 
 	}
 
