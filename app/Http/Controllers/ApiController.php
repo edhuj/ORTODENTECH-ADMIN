@@ -267,7 +267,7 @@ class ApiController extends Controller
     }
 
     public function getMatrix(){
-      $locations = Location::all();
+      $locations = App\Location::all();
       dump($locations->count());
       foreach ($locations as $location) {
 
@@ -275,7 +275,7 @@ class ApiController extends Controller
 
         $result = DB::select(DB::raw($sqlQuery));
 
-        $signumData = new SignumRaw();
+        $signumData = new App\SignumRaw();
 
         $signumData->manufacturer = $location->manufacturer;
         $signumData->model = $location->model;
@@ -313,7 +313,7 @@ class ApiController extends Controller
 
         $signumData->save();
       }
-      dump(SignumRaw::all()->count());
+      dump(App\SignumRaw::all()->count());
     }
 
     public function queryHexagon(){

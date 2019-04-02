@@ -57,7 +57,7 @@ function procesar(responseText){
 		drawHexagon(window.map, new google.maps.LatLng(signalLocations["data"][i].latitude, signalLocations["data"][i].longitude), 250, mycolor);
 
 	}
-  
+
 
 }
 
@@ -77,6 +77,12 @@ function drawHexagon(map, position, radius, fillColor){
 					fillColor: fillColor,
 					fillOpacity: 0.35
 			});
+
+			google.maps.event.addListener(polygon, 'click', function (event) {
+        //alert the index of the polygon
+        alert(p.indexID);
+				
+    	});
 			polygon.setMap(map);
 			map.setCenter(position);
 	}
