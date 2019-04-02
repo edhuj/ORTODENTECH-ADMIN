@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\SignumRaw as Signum;
+use App\Hexagon;
 
 class SignumRaw extends JsonResource
 {
