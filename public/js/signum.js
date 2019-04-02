@@ -107,8 +107,17 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 	 			Parent.removeChild(Parent.firstChild);
 			}
 
+			head = table.insertRow(0);
+			header1 = head.insertCell(0);
+			header2 = head.insertCell(0);
+			header3 = head.insertCell(0);
+
+			header1.innerHTML = "Marca";
+			header2.innerHTML = "Mediciones";
+			header3.innerHTML = "Promedio";
+
 			for(var i=0; i<hexagonData.length; i++){
-				var row = table.insertRow(i);
+				var row = table.insertRow(i+1);
 
 				var cell1 = row.insertCell(0);
 				var cell2 = row.insertCell(1);
