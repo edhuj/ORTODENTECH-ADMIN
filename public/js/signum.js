@@ -98,9 +98,10 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 
 	function showHexagonData(responseText){
 			hexagonData = JSON.parse(responseText);
-			$('#signum_data_table tbody').html("")
+			$('#signum_data_table tbody').html("");
 			for(var i=0; i<hexagonData.length; i++){
-				var row = $('#signum_data_table').insertRow(i);
+				var table = document.getElementById("signum_data_table");
+				var row = table.insertRow(i);
 
 				var cell1 = row.insertCell(0);
 				var cell2 = row.insertCell(1);
