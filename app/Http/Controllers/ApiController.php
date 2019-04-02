@@ -322,7 +322,7 @@ class ApiController extends Controller
     }
 
     public function hexagonDetail(){
-
+      $id = request('id');
       return SignumRaw::selectRaw('count(id) as counter, avg(level) as average , manufacturer')->where('signum_hexagon_id', $id)->groupBy(['manufacturer'])->get();
     }
 }
