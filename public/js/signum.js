@@ -97,7 +97,7 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 	}
 
 	function showHexagonData(responseText){
-
+		
 	}
 
 function invocar(){
