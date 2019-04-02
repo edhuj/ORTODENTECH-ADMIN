@@ -229,11 +229,42 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">Modal Header</h4>
               </div>
-              <div class="modal-body">
-                <p id="modalLatLng">This is a small modal.</p>
-              </div>
+              <table class="table table-bordered table-striped table-vcenter" id="signum_data_table">
+                  <thead>
+                      <tr>
+                          <th style="width: 20%;">Name</th>
+                          <th style="width: 10%;">Email</th>
+                          <th style="width: 10%;">City</th>
+                          <th style="width: 10%;">Age</th>
+                          <th class="text-center" style="width: 100px;">Actions</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      @foreach($users as $user)
+                        <tr>
+
+                            <td class="font-w600">
+                                <a href="be_pages_generic_profile.html">{{$user->name}}</a>
+                            </td>
+                            <td>{{$user->email}}</td>
+                            <td>{{$user->city}}</td>
+                            <td>{{$user->birthday}}</td>
+                            <td class="text-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" title="Edit">
+                                        <i class="fa fa-pencil-alt"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" title="Delete">
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                      @endforeach
+                  </tbody>
+              </table>
               <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Entendido</button>
               </div>
             </div>
           </div>
