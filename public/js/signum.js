@@ -32,6 +32,8 @@ function getRequest(){
 }
 
 function procesar(responseText){
+
+	map.polygons = [];
 	var signalLocations = JSON.parse(responseText);
 
 	console.log(signalLocations);
