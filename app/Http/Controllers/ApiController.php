@@ -112,7 +112,11 @@ class ApiController extends Controller
         ]);
       }
       else{
-        return ApiAnswer::collection($user->answers()->get());
+        return response()->json([
+          'requestType' => request('requestType'),
+          'data' => ApiAnswer::collection($user->answers()->get())
+        ]);
+
       }
     }
 
