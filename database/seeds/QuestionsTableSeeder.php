@@ -23,7 +23,6 @@ class QuestionsTableSeeder extends Seeder
           'option2'=>$faker->word,
           'option3'=>$faker->word,
           'option4'=>$faker->word,
-          'option5'=>$faker->word,
           'answer'=>$faker->numberBetween($min = 1, $max = 5),
           'topic'=>$topics[$faker->numberBetween($min = 0, $max = count($topics)-1)]
 		   ]);

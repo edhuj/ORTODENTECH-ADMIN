@@ -16,6 +16,7 @@ use App\Http\Resources\User as ApiUser;
 use App\Http\Resources\Answer as ApiAnswer;
 use App\Http\Resources\Post as ApiPost;
 use App\Http\Resources\SignumRaw as ApiSignum;
+use App\Http\Resources\Question as ApiQuestion;
 use Illuminate\Http\Request;
 
 class ApiController extends Controller
@@ -35,7 +36,7 @@ class ApiController extends Controller
 
       return response()->json([
         'requestType' => request('requestType'),
-        'data' => $questionsGroupedByTopic
+        'data' => ApiQuestion::collection($questionsGroupedByTopic)
       ]);
     }
 

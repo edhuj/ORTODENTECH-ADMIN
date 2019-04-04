@@ -14,7 +14,7 @@ class LocationController extends Controller
      */
     public function index()
     {
-        return Location::all();
+        return Location::take(100)->get();
     }
 
     public function showMap(){
