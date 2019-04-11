@@ -32,8 +32,8 @@ class ApiController extends Controller
 
 
     public function topics(){
-      $questionsGroupedByTopic = Question::all()->groupBy('topic')->get();
-      
+      $questionsGroupedByTopic = Question::all()->groupBy('topic');
+
       return response()->json([
         'requestType' => request('requestType'),
         'data' => $questionsGroupedByTopic
