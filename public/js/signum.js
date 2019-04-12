@@ -38,7 +38,6 @@ function procesar(responseText){
 
 	console.log(signalLocations);
 	for(var i=0; i<signalLocations["data"].length; i++){
-		console.log(signalLocations["data"][i].latitude+"..."+signalLocations["data"][i].longitude);
 		mycolor = '#31a354';
 		if(parseFloat(signalLocations["data"][i].average) <= 1){
         mycolor = '#f03b20';
@@ -109,8 +108,10 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 		var signalLocations = JSON.parse(responseText);
 		console.log(window.polygons.length+" hexagons");
 		for(var i=0; i<window.polygons.length; i++){
-			window.polygons[i].setOptions({fillOpacity: 0.2, strokeColor: "#000000"});
-
+			if(window.polygons[i].indexID == signalLocations["hexagon"].id){
+					window.polygons[i].setOptions({fillOpacity: 0.2, strokeColor: "#000000"});
+			}
+			
 		}
 
 		hexagonCenter = new google.maps.LatLng(signalLocations["hexagon"].latitude, signalLocations["hexagon"].longitude);
