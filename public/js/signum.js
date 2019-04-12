@@ -135,7 +135,6 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 
 				polygon.setMap(map);
 				window.polygons.push(polygon);
-				map.setCenter(position);
 		}
 
 	function getInternalData(hexagonId){
