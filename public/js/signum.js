@@ -161,7 +161,7 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 			console.log(level*hexagonRadio*Math.sqrt(3));
 			for(var position=0; position<360; position+=60){
 				currentPosition = google.maps.geometry.spherical.computeOffset(hexagonCenter, level*hexagonRadio*Math.sqrt(3), position);
-				drawRawHexagonsX(window.map, currentPosition, hexagonRadio, "#ffff00", signalLocations["hexagon"].id, 120+position, level);
+				drawRawHexagons(window.map, currentPosition, hexagonRadio, "#ffff00", signalLocations["hexagon"].id, 120+position, level);
 			}
 			level = level+1;
 		}
@@ -171,7 +171,7 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 	function drawRawHexagons(map, position, radius, fillColor, indexID, orientation, level){
 		for(var raw = 0; raw<level; raw++){
 			position = google.maps.geometry.spherical.computeOffset(position, radius*Math.sqrt(3), orientation);
-			drawHexagon(map, position, radius, "#ffff00", indexID);
+			drawHexagonX(map, position, radius, "#ffff00", indexID);
 		}
 	}
 
