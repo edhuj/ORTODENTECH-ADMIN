@@ -118,15 +118,20 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 		hexagonRadio = 50;
 		currentPosition = hexagonCenter;
 
-		for(var level=1; level<8; level++){
+		for(var level=1; level<5; level++){
 			for(var position=30; position<360; position+=60){
 				currentPosition = google.maps.geometry.spherical.computeOffset(hexagonCenter, level*hexagonRadio*Math.sqrt(3), position);
-				drawHexagon(window.map, currentPosition, hexagonRadio, "#ffff00", signalLocations["hexagon"].id);
+				drawRawHexagons(window.map, currentPosition, hexagonRadio, "#ffff00", signalLocations["hexagon"].id, 180 - position, level);
 			}
 		}
 
+	}
 
-
+	function drawRawHexagons(map, position, radius, fillColor, indexID, orientation, level){
+		for(var raw = 0; raw<level; raw++){
+			position = google.maps.geometry.spherical.computeOffset(position, radius*Math.sqrt(3), orientation);
+			drawHexagon(map, position, radius, "#ffff00", indexID);
+		}
 	}
 
 	function getHexagonData(hexagonId){
