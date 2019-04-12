@@ -147,7 +147,7 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 		console.log(window.polygons.length+" hexagons");
 		for(var i=0; i<window.polygons.length; i++){
 			if(window.polygons[i].indexID == signalLocations["hexagon"].id){
-					window.polygons[i].setOptions({fillOpacity: 0.2, strokeColor: "#000000"});
+					window.polygons[i].setOptions({fillOpacity: 0.0, strokeColor: "#000000"});
 			}
 		}
 
