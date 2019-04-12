@@ -110,7 +110,7 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 				// Construct the polygon.
 				var polygon = new google.maps.Polygon({
 						paths: coordinates,
-						strokeColor: '#FFFFFF',
+						strokeColor: '#000000',
 						strokeOpacity: 0.8,
 						strokeWeight: 2,
 						fillColor: fillColor,
