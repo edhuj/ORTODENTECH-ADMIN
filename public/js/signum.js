@@ -106,8 +106,10 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 	}
 
 	function showInternalHexagonData(responseText){
-		//console.log(responseText);
 		var signalLocations = JSON.parse(responseText);
+
+		window.polygon[signalLocations["hexagon"].id].setOptions({fillOpacity: 6.0});
+
 		hexagonCenter = new google.maps.LatLng(signalLocations["hexagon"].latitude, signalLocations["hexagon"].longitude);
 
 		for(var i=100; i<500; i+=100){
