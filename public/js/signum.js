@@ -111,14 +111,17 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 			if(window.polygons[i].indexID == signalLocations["hexagon"].id){
 					window.polygons[i].setOptions({fillOpacity: 0.2, strokeColor: "#000000"});
 			}
-			
 		}
 
 		hexagonCenter = new google.maps.LatLng(signalLocations["hexagon"].latitude, signalLocations["hexagon"].longitude);
 
-		for(var i=100; i<500; i+=100){
-			drawHexagon(window.map, hexagonCenter, i, "#ffff00", signalLocations["hexagon"].id);
+		hexagonRadio = 50;
+		currentPosition = hexagonCenter;
+		for(var position=0; position<360; position+=60){
+			currentPosition = google.maps.geometry.spherical.computeOffset(currentPosition, hexagonRadio*Math.sqrt(3), angle);
+			drawHexagon(window.map, currentPosition, hexagonRadio, "#ffff00", signalLocations["hexagon"].id);
 		}
+
 	}
 
 	function getHexagonData(hexagonId){
