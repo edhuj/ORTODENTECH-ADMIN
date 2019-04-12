@@ -91,7 +91,7 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 
     	});
 
-			google.maps.event.addListener(polygon, 'dblclick', function() {
+			google.maps.event.addListener(polygon, 'rightclick', function() {
 				console.log("Show smaller triangles");
       });
 
