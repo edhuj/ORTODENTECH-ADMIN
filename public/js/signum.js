@@ -33,7 +33,7 @@ function getRequest(){
 
 function procesar(responseText){
 
-	map.polygons = [];
+	window.polygons = [];
 	var signalLocations = JSON.parse(responseText);
 
 	console.log(signalLocations);
@@ -97,6 +97,7 @@ function drawHexagon(map, position, radius, fillColor, indexID){
       });
 
 			polygon.setMap(map);
+			window.polygons.push(polygon);
 			map.setCenter(position);
 	}
 
