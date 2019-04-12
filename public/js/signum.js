@@ -100,6 +100,44 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 			map.setCenter(position);
 	}
 
+	function drawHexagonX(map, position, radius, fillColor, indexID){
+
+				var coordinates = [];
+				for(var angle= 30;angle < 360; angle+=60) {
+					 coordinates.push(google.maps.geometry.spherical.computeOffset(position, radius, angle));
+				}
+
+				// Construct the polygon.
+				var polygon = new google.maps.Polygon({
+						paths: coordinates,
+						strokeColor: '#FFFFFF',
+						strokeOpacity: 0.8,
+						strokeWeight: 2,
+						fillColor: fillColor,
+						fillOpacity: 0.35,
+						indexID: indexID,
+				});
+
+				google.maps.event.addListener(polygon, 'click', function (event) {
+	        //alert the index of the polygon
+
+					getHexagonData(polygon.indexID);
+					$(".modal-header .modal-title").text("Detalle del punto");
+	    		$(".signum_data_table").text(this.position);
+					$('#myModal').modal('show');
+
+	    	});
+
+				google.maps.event.addListener(polygon, 'rightclick', function() {
+					console.log("Show smaller triangles");
+					getInternalData(polygon.indexID);
+	      });
+
+				polygon.setMap(map);
+				window.polygons.push(polygon);
+				map.setCenter(position);
+		}
+
 	function getInternalData(hexagonId){
 		sendAsyncRequest("/api/internalhexagondetail?id="+hexagonId, "GET", null, showInternalHexagonData, fallo);
 	}
@@ -121,7 +159,7 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 		level=1;
 		while( level*hexagonRadio*Math.sqrt(3) < 500){
 			console.log(level*hexagonRadio*Math.sqrt(3));
-			for(var position=30; position<360; position+=60){
+			for(var position=0; position<360; position+=60){
 				currentPosition = google.maps.geometry.spherical.computeOffset(hexagonCenter, level*hexagonRadio*Math.sqrt(3), position);
 				drawRawHexagons(window.map, currentPosition, hexagonRadio, "#ffff00", signalLocations["hexagon"].id, 120+position, level);
 			}
