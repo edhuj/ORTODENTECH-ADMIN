@@ -109,7 +109,7 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 		var signalLocations = JSON.parse(responseText);
 		console.log(window.polygons.length+" hexagons");
 		for(var i=0; i<window.polygons.length; i++){
-			window.hexagons[i].setOptions({fillColor:0.1});
+			window.polygons[i].setOptions({fillOpacity: 0.2});
 		}
 
 		hexagonCenter = new google.maps.LatLng(signalLocations["hexagon"].latitude, signalLocations["hexagon"].longitude);
