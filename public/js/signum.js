@@ -107,8 +107,8 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 
 	function showInternalHexagonData(responseText){
 		var signalLocations = JSON.parse(responseText);
-		console.log(window.hexagons.length+" hexagons");
-		for(var i=0; i<window.hexagons.length; i++){
+		console.log(window.polygons.length+" hexagons");
+		for(var i=0; i<window.polygons.length; i++){
 			window.hexagons[i].setOptions({fillColor:0.1});
 		}
 
