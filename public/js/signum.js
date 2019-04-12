@@ -90,6 +90,11 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 				$('#myModal').modal('show');
 
     	});
+
+			google.maps.event.addListener(polygon, 'dblclick', function() {
+				console.log("Show smaller triangles");
+      });
+
 			polygon.setMap(map);
 			map.setCenter(position);
 	}

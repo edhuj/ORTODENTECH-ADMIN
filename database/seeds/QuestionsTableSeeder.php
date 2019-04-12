@@ -13,7 +13,7 @@ class QuestionsTableSeeder extends Seeder
      */
     public function run()
     {
-      $topics = array("Science", "History", "Geography", "Sports", "Cinema", "TV Shows", "Theater", "Culture", "Animals", "Music", "Books", "Math", "Chemistry", "Physics", "Technology");
+      $topics = array("Arte & design", "Negócios", "Educação", "Entretenimento", "Comida e bebida", "Jogos", "Geral", "História", "Literatura", "Cinema", "Música", "Natureza", "Ciência", "Esportes", "TV", "Tecnologia", "Mundo");
       $faker = Factory::create();
 
       foreach(range(1,500) as $a) {
