@@ -118,7 +118,7 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 		hexagonRadio = 50;
 		currentPosition = hexagonCenter;
 
-		for(var level=1; level<5; level++){
+		while(level*hexagonRadio*Math.sqrt(3) < 500){
 			for(var position=30; position<360; position+=60){
 				currentPosition = google.maps.geometry.spherical.computeOffset(hexagonCenter, level*hexagonRadio*Math.sqrt(3), position);
 				drawRawHexagons(window.map, currentPosition, hexagonRadio, "#ffff00", signalLocations["hexagon"].id, 120+position, level);
