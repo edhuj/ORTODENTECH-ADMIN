@@ -93,10 +93,19 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 
 			google.maps.event.addListener(polygon, 'rightclick', function() {
 				console.log("Show smaller triangles");
+				getInternalData(polygon.indexID);
       });
 
 			polygon.setMap(map);
 			map.setCenter(position);
+	}
+
+	function getInternalData(hexagonId){
+		sendAsyncRequest("/api/internalhexagondetail?id="+hexagonId, "GET", null, showInternalHexagonData, fallo);
+	}
+
+	function showInternalHexagonData(responseText){
+		console.log(responseText);
 	}
 
 	function getHexagonData(hexagonId){
