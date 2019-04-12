@@ -118,6 +118,7 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 		hexagonRadio = 50;
 		currentPosition = hexagonCenter;
 
+		level=1;
 		while(level*hexagonRadio*Math.sqrt(3) < 500){
 			for(var position=30; position<360; position+=60){
 				currentPosition = google.maps.geometry.spherical.computeOffset(hexagonCenter, level*hexagonRadio*Math.sqrt(3), position);
