@@ -161,7 +161,10 @@ function procesar(responseText){
 						marcas[jsonSignum["signums"][key].manufacturer] += parseInt(jsonSignum["signums"][key].level);
 					}
 				}
-				console.log(marcas);
+				q_signals = marcas["motorola"]+marcas["samsung"]+marcas["LGE"]+marcas["HUAWEI"];
+				if(q_signals>0){
+					console.log(marcas);
+				}
 
 
 				google.maps.event.addListener(polygon, 'click', function (event) {
