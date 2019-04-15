@@ -100,7 +100,7 @@ function procesar(responseText){
 
 			polygon.setMap(map);
 			window.polygons.push(polygon);
-			map.setCenter(position);
+			//map.setCenter(position);
 	}
 
 
