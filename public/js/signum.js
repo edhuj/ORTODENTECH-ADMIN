@@ -152,7 +152,7 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 
 		hexagonCenter = new google.maps.LatLng(signalLocations["hexagon"].latitude, signalLocations["hexagon"].longitude);
 
-		hexagonRadio = 30;
+		hexagonRadio = 10;
 		currentPosition = hexagonCenter;
 
 		level=1;
