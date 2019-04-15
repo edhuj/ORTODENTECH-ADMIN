@@ -158,7 +158,7 @@ function procesar(responseText){
 					signumPoint = new google.maps.LatLng(jsonSignum["signums"][key].latitude, jsonSignum["signums"][key].longitude);
 					inside = google.maps.geometry.poly.containsLocation(signumPoint, polygon);
 					if(inside){
-						marcas.jsonSignum["signums"][key].manufacturer += jsonSignum["signums"][key].manufacturer.level;
+						marcas[jsonSignum["signums"][key].manufacturer] += jsonSignum["signums"][key].level;
 					}
 				}
 				console.log(marcas);
