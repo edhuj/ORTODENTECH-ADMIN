@@ -32,7 +32,10 @@ function getRequest(){
 }
 
 function procesar(responseText){
-
+	if(window.polygons){
+			for(var i=0; i<window.polygons.length; i++)
+				window.polygons[i].setMap(null);
+	}
 	window.polygons = [];
 	var signalLocations = JSON.parse(responseText);
 
