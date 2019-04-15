@@ -146,7 +146,6 @@ function procesar(responseText){
 				}
 
 
-				for(var j=0; jsonSignum.)
 
 				// Construct the polygon.
 				var polygon = new google.maps.Polygon({
