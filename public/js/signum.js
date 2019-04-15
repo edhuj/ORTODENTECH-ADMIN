@@ -154,24 +154,48 @@ function procesar(responseText){
 				});
 
 				marcas = {"motorola":0, "samsung":0, "LGE":0, "HUAWEI":0};
+				q_marcas = {"motorola":0, "samsung":0, "LGE":0, "HUAWEI":0};
 				for(var key in  jsonSignum["signums"]){
 					signumPoint = new google.maps.LatLng(jsonSignum["signums"][key].latitude, jsonSignum["signums"][key].longitude);
 					inside = google.maps.geometry.poly.containsLocation(signumPoint, polygon);
 					if(inside){
 						marcas[jsonSignum["signums"][key].manufacturer] += parseInt(jsonSignum["signums"][key].level);
+						q_marcas[jsonSignum["signums"][key].manufacturer] += 1;
 					}
 				}
-				q_signals = marcas["motorola"]+marcas["samsung"]+marcas["LGE"]+marcas["HUAWEI"];
+				q_signal_levels = marcas["motorola"]+marcas["samsung"]+marcas["LGE"]+marcas["HUAWEI"];
+				q_signals =  q_marcas["motorola"]+q_marcas["samsung"]+q_marcas["LGE"]+q_marcas["HUAWEI"]
+
 				if(q_signals>0){
 					console.log(marcas);
-					google.maps.event.addListener(polygon, 'click', function (event) {
+					mycolor = '#31a354';
+					if(parseFloat(q_signal_levels/q_signals) <= 1){
+			        mycolor = '#f03b20';
+			    }
+					if(parseFloat(q_signal_levels/q_signals) > 1 && parseFloat(q_signal_levels/q_signals) <= 2 ){
+			        mycolor = '#feb24c';
+			    }
+					if(parseFloat(q_signal_levels/q_signals) > 2 && parseFloat(q_signal_levels/q_signals) <= 3 ){
+			        mycolor = '#ffeda0';
+			    }
+					if(parseFloat(q_signal_levels/q_signals) > 3 && parseFloat(q_signal_levels/q_signals) <= 4 ){
+			        mycolor = '#31a354';
+			    }
+					if(parseFloat(q_signal_levels/q_signals) > 4 && parseFloat(q_signal_levels/q_signals) <= 5 ){
+			        mycolor = '#31a354';
+			    }
+
+					polygon.setOptions({fillOpacity: 0.5, strokeColor: "#000000", stroleOpacity:0.5, fillColor:mycolor});
+
+
+					/*google.maps.event.addListener(polygon, 'click', function (event) {
 		        //alert the index of the polygon
 						//getHexagonData(polygon.indexID);
 						$(".modal-header .modal-title").text("Detalle del punto");
 		    		$(".signum_data_table").text(this.position);
 						$('#myModal').modal('show');
 
-		    	});
+		    	});*/
 
 					polygon.setMap(map);
 				}
