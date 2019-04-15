@@ -191,8 +191,8 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 
 			head = table.insertRow(0);
 			header1 = head.insertCell(0);
-			header2 = head.insertCell(0);
-			header3 = head.insertCell(0);
+			header2 = head.insertCell(1);
+			header3 = head.insertCell(2);
 
 			header1.innerHTML = "Marca";
 			header2.innerHTML = "Mediciones";
