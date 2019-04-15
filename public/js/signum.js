@@ -164,20 +164,17 @@ function procesar(responseText){
 				q_signals = marcas["motorola"]+marcas["samsung"]+marcas["LGE"]+marcas["HUAWEI"];
 				if(q_signals>0){
 					console.log(marcas);
+					google.maps.event.addListener(polygon, 'click', function (event) {
+		        //alert the index of the polygon
+						//getHexagonData(polygon.indexID);
+						$(".modal-header .modal-title").text("Detalle del punto");
+		    		$(".signum_data_table").text(this.position);
+						$('#myModal').modal('show');
+
+		    	});
+
+					polygon.setMap(map);
 				}
-
-
-				google.maps.event.addListener(polygon, 'click', function (event) {
-	        //alert the index of the polygon
-					//getHexagonData(polygon.indexID);
-					$(".modal-header .modal-title").text("Detalle del punto");
-	    		$(".signum_data_table").text(this.position);
-					$('#myModal').modal('show');
-
-	    	});
-
-				polygon.setMap(map);
-				//window.polygons.push(polygon);
 		}
 
 	function getHexagonData(hexagonId){
