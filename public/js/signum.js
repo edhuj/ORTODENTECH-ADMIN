@@ -144,11 +144,14 @@ function procesar(responseText){
 					 coordinates.push(google.maps.geometry.spherical.computeOffset(position, radius, angle));
 				}
 
+				marcas = {"motorola":0, "samsung":0, "LGE":0, "HUAWEI":0};
 				for(var key in  jsonSignum["signums"]){
-					console.log(key + " --> " + jsonSignum["signums"][key].manufacturer);
-					console.log(key + " --> " + jsonSignum["signums"][key].level);
-					console.log(key + " --> " + jsonSignum["signums"][key].networkType);
+					inside = google.maps.geometry.poly.containsLocation( new google.maps.LatLng(jsonSignum["signums"][key].latitude, jsonSignum["signums"][key].longitude), coordinates);
+					if(inside){
+						marcas.jsonSignum["signums"][key].manufacturer += jsonSignum["signums"][key].manufacturer.level;
+					}
 				}
+				console.log(marcas);
 				// Construct the polygon.
 				var polygon = new google.maps.Polygon({
 						paths: coordinates,
