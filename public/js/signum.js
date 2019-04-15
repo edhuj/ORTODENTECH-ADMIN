@@ -144,7 +144,7 @@ function procesar(responseText){
 					 coordinates.push(google.maps.geometry.spherical.computeOffset(position, radius, angle));
 				}
 
-				console.log(jsonSignum.length);
+				console.log(jsonSignum);
 
 				for(var j=0; j<jsonSignum["signums"].length; j++){
 					console.log(jsonSignum["signums"][i]);
