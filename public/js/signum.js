@@ -62,7 +62,7 @@ function procesar(responseText){
 
 }
 
-function drawHexagon(map, position, radius, fillColor, indexID){
+	function drawHexagon(map, position, radius, fillColor, indexID){
 
 			var coordinates = [];
 			for(var angle= 0;angle < 360; angle+=60) {
@@ -100,57 +100,21 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 			map.setCenter(position);
 	}
 
-	function drawHexagonX(map, position, radius, fillColor, indexID){
 
-				var coordinates = [];
-				for(var angle= 30;angle < 360; angle+=60) {
-					 coordinates.push(google.maps.geometry.spherical.computeOffset(position, radius, angle));
-				}
-
-				// Construct the polygon.
-				var polygon = new google.maps.Polygon({
-						paths: coordinates,
-						strokeColor: '#000000',
-						strokeOpacity: 0.8,
-						strokeWeight: 2,
-						fillColor: fillColor,
-						fillOpacity: 0.35,
-						indexID: indexID,
-				});
-
-				google.maps.event.addListener(polygon, 'click', function (event) {
-	        //alert the index of the polygon
-
-					getHexagonData(polygon.indexID);
-					$(".modal-header .modal-title").text("Detalle del punto");
-	    		$(".signum_data_table").text(this.position);
-					$('#myModal').modal('show');
-
-	    	});
-
-				google.maps.event.addListener(polygon, 'rightclick', function() {
-					console.log("Show smaller triangles");
-					getInternalData(polygon.indexID);
-	      });
-
-				polygon.setMap(map);
-				window.polygons.push(polygon);
-		}
 
 	function getInternalData(hexagonId){
 		sendAsyncRequest("/api/internalhexagondetail?id="+hexagonId, "GET", null, showInternalHexagonData, fallo);
 	}
 
 	function showInternalHexagonData(responseText){
-		var signalLocations = JSON.parse(responseText);
-		console.log(window.polygons.length+" hexagons");
+		var signalHexagon = JSON.parse(responseText);
 		for(var i=0; i<window.polygons.length; i++){
-			if(window.polygons[i].indexID == signalLocations["hexagon"].id){
+			if(window.polygons[i].indexID == signalHexagon["hexagon"].id){
 					window.polygons[i].setOptions({fillOpacity: 0.0, strokeColor: "#FFFFFF", stroleOpacity:0.0});
 			}
 		}
 
-		hexagonCenter = new google.maps.LatLng(signalLocations["hexagon"].latitude, signalLocations["hexagon"].longitude);
+		hexagonCenter = new google.maps.LatLng(signalHexagon["hexagon"].latitude, signalHexagon["hexagon"].longitude);
 
 		hexagonRadio = 20;
 		currentPosition = hexagonCenter;
@@ -160,19 +124,52 @@ function drawHexagon(map, position, radius, fillColor, indexID){
 			console.log(level*hexagonRadio*Math.sqrt(3));
 			for(var position=0; position<360; position+=60){
 				currentPosition = google.maps.geometry.spherical.computeOffset(hexagonCenter, level*hexagonRadio*Math.sqrt(3), position);
-				drawRawHexagons(window.map, currentPosition, hexagonRadio, "#ffff00", signalLocations["hexagon"].id, 120+position, level);
+				drawRawHexagons(window.map, currentPosition, hexagonRadio, 120+position, level, signalHexagon);
 			}
 			level = level+1;
 		}
 
 	}
 
-	function drawRawHexagons(map, position, radius, fillColor, indexID, orientation, level){
+	function drawRawHexagons(map, position, radius, orientation, level, jsonSignum){
 		for(var raw = 0; raw<level; raw++){
 			position = google.maps.geometry.spherical.computeOffset(position, radius*Math.sqrt(3), orientation);
-			drawHexagonX(map, position, radius, "#ffff00", indexID);
+			drawHexagonX(map, position, radius, "#ffff00", jsonSignum);
 		}
 	}
+
+	function drawHexagonX(map, position, radius, fillColor, jsonSignum){
+
+				var coordinates = [];
+				for(var angle= 30;angle < 360; angle+=60) {
+					 coordinates.push(google.maps.geometry.spherical.computeOffset(position, radius, angle));
+				}
+
+
+				for(var j=0; jsonSignum.)
+
+				// Construct the polygon.
+				var polygon = new google.maps.Polygon({
+						paths: coordinates,
+						strokeColor: '#000000',
+						strokeOpacity: 0.8,
+						strokeWeight: 2,
+						fillColor: fillColor,
+						fillOpacity: 0.35,
+				});
+
+				google.maps.event.addListener(polygon, 'click', function (event) {
+	        //alert the index of the polygon
+					//getHexagonData(polygon.indexID);
+					$(".modal-header .modal-title").text("Detalle del punto");
+	    		$(".signum_data_table").text(this.position);
+					$('#myModal').modal('show');
+
+	    	});
+
+				polygon.setMap(map);
+				//window.polygons.push(polygon);
+		}
 
 	function getHexagonData(hexagonId){
 		sendAsyncRequest("/api/hexagondetail?id="+hexagonId, "GET", null, showHexagonData, fallo);
@@ -219,7 +216,7 @@ function invocar(){
 }
 
 function fallo(){
-  console.log("No seas weon pe");
+  console.log("No seas webon pe");
 }
 function getParameters(form) {
 	var params = "";
