@@ -145,7 +145,7 @@ function procesar(responseText){
 				}
 
 				for(var key in  jsonSignum["signums"]){
-					console.log(key + " --> " jsonSignum["signums"][key]);
+					console.log(key + " --> " + jsonSignum["signums"][key]);
 				}
 				// Construct the polygon.
 				var polygon = new google.maps.Polygon({
