@@ -121,7 +121,6 @@ function procesar(responseText){
 
 		level=1;
 		while( level*hexagonRadio*Math.sqrt(3) < 500){
-			console.log(level*hexagonRadio*Math.sqrt(3));
 			for(var position=0; position<360; position+=60){
 				currentPosition = google.maps.geometry.spherical.computeOffset(hexagonCenter, level*hexagonRadio*Math.sqrt(3), position);
 				drawRawHexagons(window.map, currentPosition, hexagonRadio, 120+position, level, signalHexagon);
@@ -145,8 +144,11 @@ function procesar(responseText){
 					 coordinates.push(google.maps.geometry.spherical.computeOffset(position, radius, angle));
 				}
 
+				console.log(jsonSignum.length);
 
-
+				for(var j=0; j<jsonSignum["signums"].length; j++){
+					console.log(jsonSignum["signums"][i]);
+				}
 				// Construct the polygon.
 				var polygon = new google.maps.Polygon({
 						paths: coordinates,
