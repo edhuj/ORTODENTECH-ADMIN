@@ -14,9 +14,6 @@ class UpdateQuestionTable extends Migration
     public function up()
     {
       Schema::table('questions', function (Blueprint $table) {
-        $table->string('filename')->nullable();
-        $table->string('mime')->nullable();
-        $table->string('original_filename')->nullable();
         $table->string('statement')->change();
         $table->string('option1')->change();
         $table->string('option2')->change();
