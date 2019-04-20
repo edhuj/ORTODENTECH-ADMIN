@@ -58,9 +58,8 @@ class ApiController extends Controller
 
     public function store(Request $request)
     {
-      if( request('requestType') == 'store_user' ){
+      if( request('requestType') == 'store_user'){
         $user = new User;
-        $user->firebase_token = request('firebase_token');
         $user->name = request('name');
         $user->email = request('email');
         $user->city = request('city');
