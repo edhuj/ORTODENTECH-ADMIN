@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Question;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class QuestionController extends Controller
 {
@@ -37,15 +39,23 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
+        dump($request);
+        $cover = $request->file('image_statement');
+        $extension = $cover->getClientOriginalExtension();
+        Storage::disk('public')->put($cover->getFilename().'.'.$extension,  File::get($cover));
+
         $question = new Question;
         $question->statement = request('question_statement');
         $question->option1 = request('question_optionA');
         $question->option2 = request('question_optionB');
         $question->option3 = request('question_optionC');
         $question->option4 = request('question_optionD');
-        $question->option5 = request('question_optionE');
         $question->answer = request('radios_options');
+        $question->category = request('category');
         $question->topic = request('topic');
+        $question->mime= $cover->getClientMimeType();
+        $question->original_filename= $cover->getClientOriginalName();
+        $question->filename= $cover->getFilename().'.'.$extension;
         $question->save();
         return redirect('/questions');
     }
