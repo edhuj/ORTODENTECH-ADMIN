@@ -18,6 +18,7 @@ Route::get('/dashboard', function () {
 Route::get('/questions', 'QuestionController@index');
 Route::get('/questions/create', 'QuestionController@create');
 Route::post('/questions', 'QuestionController@store');
+Route::get('/questions/{question}', 'QuestionController@show');
 
 Route::get('/users', 'UserController@index');
 Route::get('/ranking', 'UserController@ranking');

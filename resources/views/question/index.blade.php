@@ -21,39 +21,26 @@
                     <thead>
                         <tr>
                             <th style="width: 20%;">Question</th>
+                            <th style="width: 20%;">Categoria</th>
+                            <th style="width: 20%;">Topic</th>
                             <th style="width: 10%;">Option A</th>
                             <th style="width: 10%;">Option B</th>
                             <th style="width: 10%;">Option C</th>
                             <th style="width: 10%;">Option D</th>
-                            <th style="width: 10%;">Option E</th>
-                            <th style="width: 10%;">Topic</th>
-                            <th class="text-center" style="width: 100px;">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach($questions as $question)
                           <tr>
-
                               <td class="font-w600">
-                                  <a href="be_pages_generic_profile.html">{{$question->statement}}</a>
+                                  <a href="/questions/{{$question->id}}">{{$question->statement}}</a>
                               </td>
+                              <td>{{$question->category}}</td>
+                              <td>{{$question->topic}}</td>
                               <td>{{$question->option1}}</td>
                               <td>{{$question->option2}}</td>
                               <td>{{$question->option3}}</td>
                               <td>{{$question->option4}}</td>
-                              <td>{{$question->option5}}</td>
-                              <td>{{$question->topic}}</td>
-
-                              <td class="text-center">
-                                  <div class="btn-group">
-                                      <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" title="Edit">
-                                          <i class="fa fa-pencil-alt"></i>
-                                      </button>
-                                      <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" title="Delete">
-                                          <i class="fa fa-times"></i>
-                                      </button>
-                                  </div>
-                              </td>
                           </tr>
                         @endforeach
                     </tbody>

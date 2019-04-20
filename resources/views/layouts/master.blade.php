@@ -24,7 +24,7 @@
     </head>
     <body>
 
-        <div id="page-container" class="sidebar-o enable-page-overlay side-scroll page-header-fixed page-header-dark main-content-narrow">
+        <div id="page-container" class="sidebar-o enable-page-overlay side-scroll page-header-fixed page-header-dark">
 
             @include('layouts.navigation')
 
