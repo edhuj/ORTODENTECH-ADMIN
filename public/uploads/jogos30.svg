@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+<g id="Layer_2" display="none">
+	<rect x="-171" y="-401.5" display="inline" fill="#84C9F3" stroke="#000000" stroke-miterlimit="10" width="485" height="615.8"/>
+</g>
+<g id="Layer_1">
+	<g>
+		<rect x="60.5" y="-73.5" fill="none" width="76.9" height="76.9"/>
+	</g>
+	<g>
+		<polyline fill="none" stroke="#363636" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" points="10,12 49,12 
+			49,27 13,27 13,51 17,51 17,31 21,31 21,51 36,51 36,42 42,42 		"/>
+		<g>
+			<path fill="#363636" d="M51,40c1.1,0,2,0.9,2,2s-0.9,2-2,2s-2-0.9-2-2S49.9,40,51,40 M51,38c-2.2,0-4,1.8-4,4s1.8,4,4,4
+				s4-1.8,4-4S53.2,38,51,38L51,38z"/>
+		</g>
+		<rect fill="none" width="64" height="64"/>
+	</g>
+</g>
+</svg>

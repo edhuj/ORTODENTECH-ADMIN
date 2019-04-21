@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+<g id="Layer_2" display="none">
+	<rect x="-37" y="-334.5" display="inline" fill="#84C9F3" stroke="#000000" stroke-miterlimit="10" width="485" height="615.8"/>
+</g>
+<g id="Layer_1">
+	<g>
+		<circle fill="none" stroke="#363636" stroke-width="2" stroke-miterlimit="10" cx="32" cy="32" r="22"/>
+		<circle fill="none" stroke="#363636" stroke-width="2" stroke-miterlimit="10" cx="32" cy="32" r="12"/>
+		
+			<line fill="none" stroke="#363636" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="27" y1="32" x2="6" y2="32"/>
+		
+			<line fill="none" stroke="#363636" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="32" y1="37" x2="32" y2="58"/>
+		
+			<line fill="none" stroke="#363636" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="37" y1="32" x2="58" y2="32"/>
+		
+			<line fill="none" stroke="#363636" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="32" y1="27" x2="32" y2="6"/>
+		<circle fill="#363636" cx="43" cy="21" r="2"/>
+		<circle fill="#363636" cx="21" cy="19" r="2"/>
+		<circle fill="#363636" cx="26" cy="27" r="2"/>
+		<line fill="none" stroke="#363636" stroke-width="2" stroke-miterlimit="10" x1="32" y1="32" x2="48" y2="48"/>
+		<circle fill="#363636" cx="32" cy="32" r="2"/>
+		<rect fill="none" width="64" height="64"/>
+	</g>
+</g>
+</svg>

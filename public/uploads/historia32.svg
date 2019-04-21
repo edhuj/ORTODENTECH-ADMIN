@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+<g id="Layer_2" display="none">
+	<rect x="-372" y="-133.5" display="inline" fill="#84C9F3" stroke="#000000" stroke-miterlimit="10" width="485" height="615.8"/>
+</g>
+<g id="Layer_1">
+	<g>
+		<g>
+			<path fill="#363636" d="M54,8c1.1,0,2,0.9,2,2s-0.9,2-2,2s-2-0.9-2-2S52.9,8,54,8 M54,6c-2.2,0-4,1.8-4,4s1.8,4,4,4s4-1.8,4-4
+				S56.2,6,54,6L54,6z"/>
+		</g>
+		<path fill="none" stroke="#363636" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M6,58v-6.7c0-2.1,0.8-4.2,2.3-5.7L35,19"/>
+		
+			<line fill="#FFFFFF" stroke="#363636" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="35.3" y1="14.3" x2="49.8" y2="28.8"/>
+		<g>
+			<path fill="#363636" d="M33,10c1.1,0,2,0.9,2,2s-0.9,2-2,2s-2-0.9-2-2S31.9,10,33,10 M33,8c-2.2,0-4,1.8-4,4s1.8,4,4,4s4-1.8,4-4
+				S35.2,8,33,8L33,8z"/>
+		</g>
+		<g>
+			<path fill="#363636" d="M52,29c1.1,0,2,0.9,2,2s-0.9,2-2,2s-2-0.9-2-2S50.9,29,52,29 M52,27c-2.2,0-4,1.8-4,4s1.8,4,4,4
+				s4-1.8,4-4S54.2,27,52,27L52,27z"/>
+		</g>
+		<path fill="none" stroke="#363636" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M6,58h6.7c2.1,0,4.2-0.8,5.7-2.3L45,29"/>
+		
+			<line fill="none" stroke="#363636" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="39" y1="25" x2="6" y2="58"/>
+		<g>
+			<g>
+				<path fill="#363636" d="M50.5,12.1l1.4,1.4l-8,8l-1.4-1.4L50.5,12.1 M50.5,9.3l-1.4,1.4l-8,8l-1.4,1.4l1.4,1.4l1.4,1.4l1.4,1.4
+					l1.4-1.4l8-8l1.4-1.4l-1.4-1.4l-1.4-1.4L50.5,9.3L50.5,9.3z"/>
+			</g>
+		</g>
+		<rect fill="none" width="64" height="64"/>
+	</g>
+</g>
+</svg>
