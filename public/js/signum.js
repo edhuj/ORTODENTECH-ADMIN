@@ -106,6 +106,7 @@ function procesar(responseText){
 
 
 	function getInternalData(hexagonId){
+		$('#myLoader').modal('show');
 		sendAsyncRequest("/api/internalhexagondetail?id="+hexagonId, "GET", null, showInternalHexagonData, fallo);
 	}
 
@@ -135,6 +136,7 @@ function procesar(responseText){
 			level = level+1;
 		}
 
+		$('#myLoader').modal('hide');
 	}
 
 	function drawRawHexagons(map, position, radius, orientation, level, jsonSignum){

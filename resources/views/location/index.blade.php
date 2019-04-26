@@ -32,8 +32,6 @@
       <script>
         function initMap() {
 
-          signalLocations = {!!json_encode($locations)!!};
-
           window.map = new google.maps.Map(document.getElementById('map'), {
             zoom: 11,
             center: {lat:-12.066910, lng:-77.023073},
@@ -250,6 +248,18 @@
             </div>
           </div>
         </div>
+
+        <!-- Loader -->
+        <div class="modal fade" id="myLoader" role="dialog">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Modal Header</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+
 
         <script src="/js/dashmix.core.min.js"></script>
         <script src="/js/dashmix.app.min.js"></script>
