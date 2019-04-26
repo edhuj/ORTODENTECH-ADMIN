@@ -254,7 +254,8 @@
           <div class="modal-dialog modal-sm">
             <div class="modal-content">
               <div class="modal-header">
-                <h4 class="modal-title">Modal Header</h4>
+                <h4 class="modal-title">Obteniendo información</h4>
+                <img src="/uploads/spinner.gif" alt="" width="50px" height="50px">
               </div>
             </div>
           </div>
