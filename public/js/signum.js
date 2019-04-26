@@ -93,7 +93,7 @@ function procesar(responseText){
 
     	});
 
-			google.maps.event.addListeneraddListenerOnce(polygon, 'rightclick', function() {
+			google.maps.event.addListenerOnce(polygon, 'rightclick', function() {
 				console.log("Show smaller triangles");
 				getInternalData(polygon.indexID);
       });
@@ -115,7 +115,7 @@ function procesar(responseText){
 			if(window.polygons[i].indexID == signalHexagon["hexagon"].id){
 					window.polygons[i].setOptions({fillOpacity: 0.0, strokeColor: "#FFFFFF", stroleOpacity:0.0});
 					google.maps.event.addListener(polygons[i], 'click', function (event) {
-		      	
+
 
 		    	});
 			}
