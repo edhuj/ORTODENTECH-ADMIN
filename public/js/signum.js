@@ -83,7 +83,7 @@ function procesar(responseText){
 					indexID: indexID,
 			});
 
-			google.maps.event.addListenerOnce(polygon, 'click', function (event) {
+			google.maps.event.addListener(polygon, 'click', function (event) {
         //alert the index of the polygon
 
 				getHexagonData(polygon.indexID);
@@ -93,7 +93,7 @@ function procesar(responseText){
 
     	});
 
-			google.maps.event.addListener(polygon, 'rightclick', function() {
+			google.maps.event.addListeneraddListenerOnce(polygon, 'rightclick', function() {
 				console.log("Show smaller triangles");
 				getInternalData(polygon.indexID);
       });
