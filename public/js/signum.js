@@ -83,7 +83,7 @@ function procesar(responseText){
 					indexID: indexID,
 			});
 
-			google.maps.event.addListener(polygon, 'click', function (event) {
+			google.maps.event.addListenerOnce(polygon, 'click', function (event) {
         //alert the index of the polygon
 
 				getHexagonData(polygon.indexID);
@@ -113,6 +113,7 @@ function procesar(responseText){
 		var signalHexagon = JSON.parse(responseText);
 		for(var i=0; i<window.polygons.length; i++){
 			if(window.polygons[i].indexID == signalHexagon["hexagon"].id){
+					window.polygons[i].setOptions({fillOpacity: 0.0, strokeColor: "#FFFFFF", stroleOpacity:0.0});
 					window.polygons[i].setOptions({fillOpacity: 0.0, strokeColor: "#FFFFFF", stroleOpacity:0.0});
 			}
 		}
@@ -249,7 +250,7 @@ function invocar(){
 }
 
 function fallo(){
-  console.log("No seas webon pe");
+  console.log("failed");
 }
 function getParameters(form) {
 	var params = "";
