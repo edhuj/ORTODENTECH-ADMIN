@@ -114,7 +114,10 @@ function procesar(responseText){
 		for(var i=0; i<window.polygons.length; i++){
 			if(window.polygons[i].indexID == signalHexagon["hexagon"].id){
 					window.polygons[i].setOptions({fillOpacity: 0.0, strokeColor: "#FFFFFF", stroleOpacity:0.0});
-					window.polygons[i].setOptions({fillOpacity: 0.0, strokeColor: "#FFFFFF", stroleOpacity:0.0});
+					google.maps.event.addListener(polygons[i], 'click', function (event) {
+		      	
+
+		    	});
 			}
 		}
 
