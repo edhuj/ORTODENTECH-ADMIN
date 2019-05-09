@@ -213,11 +213,36 @@ class ApiController extends Controller
       $location->isgsm = request('isgsm');
 
       $signumRaw = new SignumRaw();
+      $signumRaw->manufacturer = request('manufacturer');
+      $signumRaw->model = request('model');
+      $signumRaw->version_release = request('version_release');
+      $signumRaw->version_name = request('version_name');
 
-      //DB::select('insert blablabla');
+      $signumRaw->provider = request('provider');
+      $signumRaw->accuracy = request('accuracy');
+      $signumRaw->latitude = request('latitude');
+      $signumRaw->longitude = request('longitude');
 
-      //$location->save();
+      $signumRaw->cdmaDbm = request('cdmaDbm');
+      $signumRaw->cdmaEcio = request('cdmaEcio');
+      $signumRaw->evdoDbm = request('evdoDbm');
+      $signumRaw->evdoEcio = request('evdoEcio');
+      $signumRaw->evdoSnr = request('evdoSnr');
+      $signumRaw->gsmBitErrorRate = request('gsmBitErrorRate');
+      $signumRaw->mLteRsrp = request('mLteRsrp');
+      $signumRaw->mLteRsrq = request('mLteRsrq');
+      $signumRaw->mLteRssnr = request('mLteRssnr');
+      $signumRaw->mLteCqi = request('mLteCqi');
 
+      $signumRaw->signal = request('signal');
+      $signumRaw->level = request('level');
+      $signumRaw->networkType = request('networkType');
+      $signumRaw->gpsEnabled = request('gpsEnabled');
+      $signumRaw->isgsm = request('isgsm');
+      $signumRaw->signum_hexagon_id = $location->getClosestHexagon()[0]->id;
+
+      $location->save();
+      $signumRaw->save();
 
     }
 
