@@ -9,6 +9,6 @@ class Location extends Model
 {
     //
     function getClosestHexagon(){
-      return DB::select('call assignHexagon2(?)', this->id);
+      return DB::select('call assignHexagon2(?)', $this->id);
     }
 }
