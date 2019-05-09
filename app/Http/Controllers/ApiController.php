@@ -212,7 +212,13 @@ class ApiController extends Controller
       $location->gpsEnabled = request('gpsEnabled');
       $location->isgsm = request('isgsm');
 
-      $location->save();
+      $signumRaw = new SignumRaw();
+
+      //DB::select('insert blablabla');
+
+      //$location->save();
+
+
     }
 
     public function getManufacturers(){

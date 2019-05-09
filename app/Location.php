@@ -9,6 +9,12 @@ class Location extends Model
 {
     //
     function getClosestHexagon(){
-      return DB::select('call assignHexagon2(?)', [$this->id]);
+      $signumRaw = new SignumRaw();
+
+      return DB::select('select hexagons.id from
+                          hexagons order by
+                          ST_Distance_Sphere( point(?, ?), point(hexagons.latitude, hexagons.longitude))
+                          asc limit 1', [$this->latitude, $this->longitude]);
+
     }
 }
