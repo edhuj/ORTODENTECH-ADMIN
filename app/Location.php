@@ -54,7 +54,7 @@ class Location extends Model
       $signumRaw->isgsm = $this->isgsm;
       $signumRaw->signum_hexagon_id = $hexagon[0]->id;
 
-      $signumRaw->save();
+      return $signumRaw->save();
     }
 
 
