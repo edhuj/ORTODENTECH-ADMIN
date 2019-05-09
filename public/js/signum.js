@@ -58,6 +58,11 @@ function procesar(responseText){
         mycolor = '#31a354';
     }
 
+		var marker = new google.maps.Marker({
+	    position: new google.maps.LatLng(signalLocations["data"][i].latitude, signalLocations["data"][i].longitude),
+	    map: window.map,
+	    title: signalLocations["data"][i].latitude +','+signalLocations["data"][i].longitude
+  	});
 		drawHexagon(window.map, new google.maps.LatLng(signalLocations["data"][i].latitude, signalLocations["data"][i].longitude), 500, mycolor, signalLocations["data"][i]["id"]);
 
 	}
