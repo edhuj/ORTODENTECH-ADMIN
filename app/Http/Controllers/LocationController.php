@@ -23,6 +23,11 @@ class LocationController extends Controller
       return view('location/index', compact('locations', 'manufacturers'));
     }
 
+    public function showMapTwo(){
+      $manufacturers = Location::select('manufacturer')->distinct()->get();
+      return view('location/index_two', compact('locations', 'manufacturers'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
