@@ -17,9 +17,15 @@
                 <textarea class="form-control" id="question_statement" name="question_statement" rows="3" type="text"></textarea>
             </div>
             <div class="form-group">
-              <label>Elige una imagen (opcional)</label>
+              <label>Elige una imagen</label>
               <div>
                 <input type="file"  name="image_statement">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Elige un icono</label>
+              <div>
+                <input type="file"  name="image_icono">
               </div>
             </div>
             <div class="form-group">

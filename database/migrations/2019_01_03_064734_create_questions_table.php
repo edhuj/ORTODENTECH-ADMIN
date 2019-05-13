@@ -15,6 +15,7 @@ class CreateQuestionsTable extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('quiz_id');
             $table->string('filename')->nullable();
             $table->string('mime')->nullable();
             $table->string('original_filename')->nullable();
@@ -24,7 +25,6 @@ class CreateQuestionsTable extends Migration
             $table->string('option3');
             $table->string('option4');
             $table->integer('answer');
-            $table->string('topic');
             $table->timestamps();
         });
     }
