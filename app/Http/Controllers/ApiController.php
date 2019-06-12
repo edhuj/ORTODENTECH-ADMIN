@@ -17,6 +17,7 @@ use App\Http\Resources\Answer as ApiAnswer;
 use App\Http\Resources\Post as ApiPost;
 use App\Http\Resources\SignumRaw as ApiSignum;
 use App\Http\Resources\Question as ApiQuestion;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ApiController extends Controller
@@ -381,6 +382,10 @@ class ApiController extends Controller
         'hexagon'=>$hexagon,
         'signums'=>$signums
         ]);
+    }
+
+    public function myLittleHexagons(){
+      return Hexagon::where('created_at', '>', Carbon::today()->subDays(5))->get();
     }
 
 }

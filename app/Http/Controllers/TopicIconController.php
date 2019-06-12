@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Quiz;
-use App\Category;
+use App\TopicIcon;
 use Illuminate\Http\Request;
 
-class QuizController extends Controller
+class TopicIconController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,7 @@ class QuizController extends Controller
      */
     public function index()
     {
-      $quizzes = Quiz::all();
-      return view('quiz/index', compact('quizzes'));
+        //
     }
 
     /**
@@ -26,8 +24,7 @@ class QuizController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
-        return view('quiz/create', compact('categories'));
+        //
     }
 
     /**
@@ -44,10 +41,10 @@ class QuizController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Quiz  $quiz
+     * @param  \App\TopicIcon  $topicIcon
      * @return \Illuminate\Http\Response
      */
-    public function show(Quiz $quiz)
+    public function show(TopicIcon $topicIcon)
     {
         //
     }
@@ -55,10 +52,10 @@ class QuizController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Quiz  $quiz
+     * @param  \App\TopicIcon  $topicIcon
      * @return \Illuminate\Http\Response
      */
-    public function edit(Quiz $quiz)
+    public function edit(TopicIcon $topicIcon)
     {
         //
     }
@@ -67,10 +64,10 @@ class QuizController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Quiz  $quiz
+     * @param  \App\TopicIcon  $topicIcon
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Quiz $quiz)
+    public function update(Request $request, TopicIcon $topicIcon)
     {
         //
     }
@@ -78,10 +75,10 @@ class QuizController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Quiz  $quiz
+     * @param  \App\TopicIcon  $topicIcon
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Quiz $quiz)
+    public function destroy(TopicIcon $topicIcon)
     {
         //
     }

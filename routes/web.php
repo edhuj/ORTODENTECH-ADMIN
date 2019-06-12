@@ -29,6 +29,10 @@ Route::get('/posts', 'PostController@index');
 Route::get('/posts/create', 'PostController@create');
 Route::post('/posts', 'PostController@store');
 
+Route::get('/quizzes', 'QuizController@index');
+Route::get('/quiz/create', 'QuizController@create');
+Route::post('/quizzes', 'QuizController@store');
+
 Route::get('/locations', 'LocationController@index');
 Route::get('/signum', 'LocationController@showMap');
 Route::get('/signumtwo', 'LocationController@showMapTwo');

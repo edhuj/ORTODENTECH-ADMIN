@@ -268,6 +268,6 @@
         <script src="/js/plugins/chart.js/Chart.bundle.min.js"></script>
         <script src="/js/pages/be_pages_dashboard.min.js"></script>
         <script>jQuery(function(){ Dashmix.helpers('sparkline'); });</script>
-        <script src="/js/signum.js"> </script>
+        <script src="/js/signum2.js"> </script>
     </body>
 </html>

@@ -36,3 +36,5 @@ Route::get('/matrix', 'ApiController@getMatrix');
 Route::get('/hexagondata', 'ApiController@queryHexagon');
 Route::get('/hexagondetail', 'ApiController@hexagonDetail');
 Route::get('/internalhexagondetail','ApiController@internalHexagonDetail');
+
+Route::get('/smallerhexagons', 'ApiController@myLittleHexagons');
